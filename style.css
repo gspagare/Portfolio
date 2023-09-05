@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.rightpart {
+    position: absolute;
+    right: 0;
+    margin-right: 25px;
+    display: flex;
+}
+
+.rightpart ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 24px;
+}
+
+.rightpart ul li {
+    text-align: center;
+    padding: 0px 5px;
+    margin: 0px 5px;
+}
+
+.rightpart ul li a {
+    font-size: 16px;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-stretch: ultra-condensed;
+    font-weight: lighter;
+    text-decoration: none;
+    color: black;
+    transition: all .5s ease;
+}
+
+.rightpart ul li a:hover {
+    transition: all .5s ease;
+    color: #EEA302;
+}
+
+
+#front{
+    background-image: url('img/about_part_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.mainText {
+    padding-left: 5%;
+    font-size: 60px;
+    font-family: sans-serif;
+    color: grey;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.leftMainText {
+    padding-top: 50%;
+}
+
+.leftMainText h2 span {
+    transition: 0.25s all ease-in-out;
+}
+
+.leftMainText h2 span:hover {
+    color: black;
+    transition: 0.25s all ease-in-out;
+}
+.g {
+    color: #EEA302;
+    transition: 0.25s all ease-in-out;
+}
+
+.g:hover {
+    text-shadow: -10px 0 0px #EEA302;
+    transition: 0.25s all ease-in-out;
+}
+
+.profileImg {
+    display: flex;
+}
+
+.profileImg img{
+    height: 350px;
+    width: 350px;
+    /* float: right; */
+    /* margin-right:12%; */;
+    /* position: static; */
+    z-index: 10;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    /* right: 0; */
+    transition: 0.25s all ease-out;
+    /* clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%); */
+}
+
+.profileImg img:hover {
+    height: 360px;
+    width: 360px;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: black 5px 5px 5px, #555555 4px 4px 40px;
+    transition: 0.25s all ease-in;
+
+}
+
+#about {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #ffd271;
+}
+
+.aboutMe {
+    padding-left: 10%;
+}
+
+.aboutMe p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+    /* line-height: 50px; */
+}
+
+.aboutMeTitleBackground {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    margin-top: 10vh;
+    background-color: rgb(0, 0, 0);
+    float: left;
+    /* padding: 10px 20px; */
+    width: 150px;
+    height: 100px;
+    margin-left: 15vw;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.aboutMeTitleBackground:after{
+    content: '';
+    position: absolute;  
+    width: 20px;
+    height: 20px;  
+    border: 1px solid #999;
+    top: -10px;
+    left: 50%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+
+.aboutMeTitleBackground:before{
+    content: '';
+    position: absolute;
+    width: 5px; 
+    height: 5px;
+    top: -14px;
+    left: 56%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+}
+
+@keyframes swing {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+.aboutMeTitleBackground p {
+    color: white;
+    text-align: center;
+    padding-top: 25%;
+}
+
+.aboutMeText {
+    padding-top: 35vh;
+}
+
+.skillsTitle {
+    padding-left: 10%;
+}
+
+#skills p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+    /* line-height: 50px; */
+}
+
+.skillsTitleBackground  {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    margin-top: 10vh;
+    background-color: rgb(0, 0, 0);
+    float: left;
+    /* padding: 10px 20px; */
+    width: 150px;
+    height: 100px;
+    margin-left: 15vw;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.skillsTitleBackground::after {
+    content: '';
+    position: absolute;  
+    width: 20px;
+    height: 20px;  
+    border: 1px solid #999;
+    top: -10px;
+    left: 50%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+
+.skillsTitleBackground::before {
+    content: '';
+    position: absolute;
+    width: 5px; 
+    height: 5px;
+    top: -14px;
+    left: 56%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+}
+
+.skillsTitleBackground p {
+    color: white;
+    text-align: center;
+    padding-top: 25%;
+}
+
+.skillsText {
+    padding-top: 50vh;
+}
+
+.workExperience {
+    display: flex;
+    padding: 0px 100px;
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+}
+
+.workExperienceTitle {
+    width: 50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    align-items: center;
+    margin: auto;
+}
+
+.sectionTitleBackground {
+    background-color: #ffd271;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    /* position: absolute; */
+    text-align: center;
+    margin: auto;
+}
+
+.sectionTitleBackground p{
+    font-size: 35px;
+    color: black;
+    padding-top: 42%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.workExperienceText {
+    width: 50%;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: space-around;
+}
+
+.experiences {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 5% 0;
+}
+
+.companyName {
+    font-size: 28px;
+    color: white;
+}
+
+.positionName {
+    font-size: 22px;
+    color: #666666;
+    margin-top: 3px;
+}
+
+.duration {
+    font-size: 18px;
+    color: #999999;
+    margin-top: 4px;
+    margin-bottom: 2px;
+}
+
+.point {
+    font-size: 16px;
+    color: #bbbbbb;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-stretch: ultra-condensed;
+    font-weight: lighter;
+    margin-bottom: 2px;
+}
+
+#skills {
+    height: 100vh;
+}
