@@ -114,7 +114,7 @@ body {
 #about {
     height: 100vh;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     background-color: #ffd271;
 }
 
@@ -137,7 +137,7 @@ body {
     /* padding: 10px 20px; */
     width: 150px;
     height: 100px;
-    margin-left: 15vw;
+    /* margin-left: 15vw; */
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
@@ -201,7 +201,7 @@ body {
     /* padding: 10px 20px; */
     width: 150px;
     height: 100px;
-    margin-left: 15vw;
+    /* margin-left: 15vw; */
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
@@ -238,6 +238,64 @@ body {
 }
 
 .skillsText {
+    padding-top: 50vh;
+}
+.educationTitle {
+    padding-left: 10%;
+}
+
+#education p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+    /* line-height: 50px; */
+}
+
+.educationTitleBackground  {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    margin-top: 10vh;
+    background-color: rgb(0, 0, 0);
+    float: left;
+    /* padding: 10px 20px; */
+    width: 150px;
+    height: 100px;
+    /* margin-left: 15vw; */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.educationTitleBackground::after {
+    content: '';
+    position: absolute;  
+    width: 20px;
+    height: 20px;  
+    border: 1px solid #999;
+    top: -10px;
+    left: 50%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+
+.educationTitleBackground::before {
+    content: '';
+    position: absolute;
+    width: 5px; 
+    height: 5px;
+    top: -14px;
+    left: 56%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+}
+
+.educationTitleBackground p {
+    color: white;
+    text-align: center;
+    padding-top: 25%;
+}
+
+.educationText {
     padding-top: 50vh;
 }
 
