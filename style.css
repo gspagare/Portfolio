@@ -118,7 +118,7 @@ body {
     background-color: #ffd271;
 }
 
-.aboutMe {
+.aboutMeTitle {
     padding-left: 10%;
 }
 
@@ -179,67 +179,15 @@ body {
 }
 
 .aboutMeText {
+    padding: 25px;
     padding-top: 35vh;
 }
 
-.skillsTitle {
-    padding-left: 10%;
+.aboutMeText p {
+    font-size: 20px;
+    margin-top: 10px;
 }
 
-#skills p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 24px;
-    /* line-height: 50px; */
-}
-
-.skillsTitleBackground  {
-    animation: swing ease-in-out 1s infinite alternate;
-    transform-origin: center -20px;
-    margin-top: 10vh;
-    background-color: rgb(0, 0, 0);
-    float: left;
-    /* padding: 10px 20px; */
-    width: 150px;
-    height: 100px;
-    /* margin-left: 15vw; */
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-}
-
-.skillsTitleBackground::after {
-    content: '';
-    position: absolute;  
-    width: 20px;
-    height: 20px;  
-    border: 1px solid #999;
-    top: -10px;
-    left: 50%;
-    z-index: 0;
-    border-bottom: none;
-    border-right: none;
-    transform: rotate(45deg);
-}
-
-.skillsTitleBackground::before {
-    content: '';
-    position: absolute;
-    width: 5px; 
-    height: 5px;
-    top: -14px;
-    left: 56%;
-    z-index: 5;
-    border-radius: 50% 50%;
-    background: #000;
-}
-
-.skillsTitleBackground p {
-    color: white;
-    text-align: center;
-    padding-top: 25%;
-}
-
-.skillsText {
-    padding-top: 50vh;
-}
 .educationTitle {
     padding-left: 10%;
 }
@@ -296,7 +244,88 @@ body {
 }
 
 .educationText {
-    padding-top: 50vh;
+    padding: 25px;
+    padding-top: 35vh;
+}
+
+.educationText p {
+    font-size: 20px !important;
+    margin-top: 10px;
+}
+
+.courseName {
+    margin-bottom: 25px;
+}
+
+.skillsTitle {
+    padding-left: 10%;
+}
+
+#skills p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+    /* line-height: 50px; */
+}
+
+.technologiesImages img{
+    height: 50px;
+    width: 50px;
+    margin: 5px 5px;
+}
+
+.skillsTitleBackground  {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    margin-top: 10vh;
+    background-color: rgb(0, 0, 0);
+    float: left;
+    /* padding: 10px 20px; */
+    width: 150px;
+    height: 100px;
+    /* margin-left: 15vw; */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.skillsTitleBackground::after {
+    content: '';
+    position: absolute;  
+    width: 20px;
+    height: 20px;  
+    border: 1px solid #999;
+    top: -10px;
+    left: 50%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+
+.skillsTitleBackground::before {
+    content: '';
+    position: absolute;
+    width: 5px; 
+    height: 5px;
+    top: -14px;
+    left: 56%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+}
+
+.skillsTitleBackground p {
+    color: white;
+    text-align: center;
+    padding-top: 25%;
+}
+
+.skillsText {
+    padding: 25px;
+    padding-top: 35vh;
+}
+
+.skillsText p {
+    font-size: 20px !important;
+    margin-top: 10px;
 }
 
 .workExperience {
@@ -306,37 +335,70 @@ body {
     height: 100vh;
 }
 
-.workExperienceTitle {
-    width: 50%;
+#experience {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     align-items: center;
     margin: auto;
+    height: 100vh;
+    background-color: black;
 }
 
 .sectionTitleBackground {
-    background-color: #ffd271;
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    /* position: absolute; */
-    text-align: center;
-    margin: auto;
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    margin-top: 10vh;
+    background-color: #EEA302;
+    float: left;
+    /* padding: 10px 20px; */
+    width: 150px;
+    height: 100px;
+    /* margin-left: 15vw; */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.sectionTitleBackground::after {
+    content: '';
+    position: absolute;  
+    width: 20px;
+    height: 20px;  
+    border: 1px solid white;
+    top: -10px;
+    left: 50%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+
+.sectionTitleBackground::before {
+    content: '';
+    position: absolute;
+    width: 5px; 
+    height: 5px;
+    top: -14px;
+    left: 56%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: white;
 }
 
 .sectionTitleBackground p{
     font-size: 35px;
-    color: black;
-    padding-top: 42%;
+    color: white;
+    text-align: center;
+    padding-top: 25%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .workExperienceText {
     width: 50%;
     max-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     padding: 30px;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .experiences {
