@@ -365,40 +365,55 @@ body {
 
 .projectsText {
     justify-content: space-evenly;
+    padding-right: 10vw;
 }
 
 .level {
     font-size: 22px; 
 }
 
+.beginner, .intermediate {
+    margin: 15px 0;
+}
+
 .projectName {
     font-size: 18px;
+    margin: 8px 0;
 }
 
 .projectDescription {
     font-size: 14px;
+    margin: 8px 0;
 }
 
 .links {
     display: flex;
+    margin: 8px 0;
 }
 
 .codeLink, .demoLink {
     margin-right: 10px;
     margin-top: 5px;
-    border: 1px solid coral;
+    border: 1px solid black;
     padding: 5px;
     background-color: coral;
-    border-radius: 5px;
-    text-decoration: none;
+    /* border-radius: 5px; */
     color: white;
+    transition: ease-in-out;
+    transition-duration: 0.5s;
+    /* border: none; */
 }
 
 .codeLink a, .demoLink a {
     color: white;
     font-size: 12px;
+    text-decoration: none;
 }
 
 .codeLink:hover, .demoLink:hover {
-    border: 1px solid black;
+    border: 1.5px solid white;
+    transition: ease-in-out;
+    transition-duration: 0.5s;
+    box-shadow: 3px 3px 10px gray;
+
 }
