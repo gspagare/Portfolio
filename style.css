@@ -73,12 +73,13 @@ body {
     transition: 0.25s all ease-in-out;
 }
 .g {
-    color: #EEA302;
+    color: blueviolet;
     transition: 0.25s all ease-in-out;
 }
 
 .g:hover {
-    text-shadow: -10px 0 0px #EEA302;
+    color: skyblue;
+    text-shadow: -10px 0 0px blueviolet;
     transition: 0.25s all ease-in-out;
 }
 
@@ -111,24 +112,24 @@ body {
 
 }
 
-#about {
+#aboutPart {
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: #ffd271;
 }
 
-.aboutMeTitle {
+.aboutMeTitle, .educationTitle, .skillsTitle {
     padding-left: 10%;
 }
 
-.aboutMe p {
+.aboutMe p, #education p, #skills p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 24px;
     /* line-height: 50px; */
 }
 
-.aboutMeTitleBackground {
+.aboutMeTitleBackground, .educationTitleBackground, .skillsTitleBackground {
     animation: swing ease-in-out 1s infinite alternate;
     transform-origin: center -20px;
     margin-top: 10vh;
@@ -141,7 +142,7 @@ body {
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
-.aboutMeTitleBackground:after{
+.aboutMeTitleBackground:after, .educationTitleBackground::after, .skillsTitleBackground::after{
     content: '';
     position: absolute;  
     width: 20px;
@@ -155,7 +156,7 @@ body {
     transform: rotate(45deg);
 }
 
-.aboutMeTitleBackground:before{
+.aboutMeTitleBackground::before, .educationTitleBackground::before, .skillsTitleBackground::before{
     content: '';
     position: absolute;
     width: 5px; 
@@ -168,87 +169,22 @@ body {
 }
 
 @keyframes swing {
-    0% { transform: rotate(3deg); }
-    100% { transform: rotate(-3deg); }
+    0% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
 }
 
-.aboutMeTitleBackground p {
+.aboutMeTitleBackground p, .educationTitleBackground p, .skillsTitleBackground p {
     color: white;
     text-align: center;
     padding-top: 25%;
 }
 
-.aboutMeText {
+.aboutMeText, .educationText, .skillsText {
     padding: 25px;
     padding-top: 35vh;
 }
 
-.aboutMeText p {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-.educationTitle {
-    padding-left: 10%;
-}
-
-#education p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 24px;
-    /* line-height: 50px; */
-}
-
-.educationTitleBackground  {
-    animation: swing ease-in-out 1s infinite alternate;
-    transform-origin: center -20px;
-    margin-top: 10vh;
-    background-color: rgb(0, 0, 0);
-    float: left;
-    /* padding: 10px 20px; */
-    width: 150px;
-    height: 100px;
-    /* margin-left: 15vw; */
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-}
-
-.educationTitleBackground::after {
-    content: '';
-    position: absolute;  
-    width: 20px;
-    height: 20px;  
-    border: 1px solid #999;
-    top: -10px;
-    left: 50%;
-    z-index: 0;
-    border-bottom: none;
-    border-right: none;
-    transform: rotate(45deg);
-}
-
-.educationTitleBackground::before {
-    content: '';
-    position: absolute;
-    width: 5px; 
-    height: 5px;
-    top: -14px;
-    left: 56%;
-    z-index: 5;
-    border-radius: 50% 50%;
-    background: #000;
-}
-
-.educationTitleBackground p {
-    color: white;
-    text-align: center;
-    padding-top: 25%;
-}
-
-.educationText {
-    padding: 25px;
-    padding-top: 35vh;
-}
-
-.educationText p {
+.aboutMeText p, .educationText p, .skillsText p {
     font-size: 20px !important;
     margin-top: 10px;
 }
@@ -257,82 +193,10 @@ body {
     margin-bottom: 25px;
 }
 
-.skillsTitle {
-    padding-left: 10%;
-}
-
-#skills p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 24px;
-    /* line-height: 50px; */
-}
-
 .technologiesImages img{
     height: 50px;
     width: 50px;
     margin: 5px 5px;
-}
-
-.skillsTitleBackground  {
-    animation: swing ease-in-out 1s infinite alternate;
-    transform-origin: center -20px;
-    margin-top: 10vh;
-    background-color: rgb(0, 0, 0);
-    float: left;
-    /* padding: 10px 20px; */
-    width: 150px;
-    height: 100px;
-    /* margin-left: 15vw; */
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-}
-
-.skillsTitleBackground::after {
-    content: '';
-    position: absolute;  
-    width: 20px;
-    height: 20px;  
-    border: 1px solid #999;
-    top: -10px;
-    left: 50%;
-    z-index: 0;
-    border-bottom: none;
-    border-right: none;
-    transform: rotate(45deg);
-}
-
-.skillsTitleBackground::before {
-    content: '';
-    position: absolute;
-    width: 5px; 
-    height: 5px;
-    top: -14px;
-    left: 56%;
-    z-index: 5;
-    border-radius: 50% 50%;
-    background: #000;
-}
-
-.skillsTitleBackground p {
-    color: white;
-    text-align: center;
-    padding-top: 25%;
-}
-
-.skillsText {
-    padding: 25px;
-    padding-top: 35vh;
-}
-
-.skillsText p {
-    font-size: 20px !important;
-    margin-top: 10px;
-}
-
-.workExperience {
-    display: flex;
-    padding: 0px 100px;
-    background-color: rgb(0, 0, 0);
-    height: 100vh;
 }
 
 #experience {
@@ -345,17 +209,21 @@ body {
     background-color: black;
 }
 
+.workExperienceTitle {
+    margin-left: 30%;
+}
+
 .sectionTitleBackground {
     animation: swing ease-in-out 1s infinite alternate;
     transform-origin: center -20px;
     margin-top: 10vh;
-    background-color: #EEA302;
+    background-color: lightgreen;
     float: left;
     /* padding: 10px 20px; */
-    width: 150px;
-    height: 100px;
+    width: 250px;
+    height: 140px;
     /* margin-left: 15vw; */
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    box-shadow: 7px 7px 10px gray;
 }
 
 .sectionTitleBackground::after {
@@ -378,7 +246,7 @@ body {
     width: 5px; 
     height: 5px;
     top: -14px;
-    left: 56%;
+    left: 53%;
     z-index: 5;
     border-radius: 50% 50%;
     background: white;
@@ -386,9 +254,9 @@ body {
 
 .sectionTitleBackground p{
     font-size: 35px;
-    color: white;
+    color: black;
     text-align: center;
-    padding-top: 25%;
+    padding-top: 10%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -398,12 +266,13 @@ body {
     /* display: flex; */
     /* flex-direction: column; */
     padding: 30px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .experiences {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-top: 5% 0;
+    padding: 5% 0%;
 }
 
 .companyName {
@@ -433,6 +302,103 @@ body {
     margin-bottom: 2px;
 }
 
-#skills {
+#projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    align-items: center;
+    margin: auto;
     height: 100vh;
+    background-color: lightskyblue;
+}
+
+.projectsTitle {
+    margin-left: 30%;
+}
+
+.projectsTitleBackground {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    margin-top: 10vh;
+    background-color: coral;
+    float: left;
+    /* padding: 10px 20px; */
+    width: 250px;
+    height: 140px;
+    /* margin-left: 15vw; */
+    box-shadow: 7px 7px 10px gray;
+}
+
+.projectsTitleBackground::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    top: -10px;
+    left: 50%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+
+.projectsTitleBackground::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: -14px;
+    left: 53%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: white;
+}
+
+.projectsTitleBackground p {
+    font-size: 35px;
+    color: black;
+    text-align: center;
+    padding-top: 20%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.projectsText {
+    justify-content: space-evenly;
+}
+
+.level {
+    font-size: 22px; 
+}
+
+.projectName {
+    font-size: 18px;
+}
+
+.projectDescription {
+    font-size: 14px;
+}
+
+.links {
+    display: flex;
+}
+
+.codeLink, .demoLink {
+    margin-right: 10px;
+    margin-top: 5px;
+    border: 1px solid coral;
+    padding: 5px;
+    background-color: coral;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.codeLink a, .demoLink a {
+    color: white;
+    font-size: 12px;
+}
+
+.codeLink:hover, .demoLink:hover {
+    border: 1px solid black;
 }
