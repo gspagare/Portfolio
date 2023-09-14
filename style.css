@@ -147,9 +147,9 @@ body {
     position: absolute;  
     width: 20px;
     height: 20px;  
-    border: 1px solid #999;
+    border: 1px solid black;
     top: -10px;
-    left: 50%;
+    left: 48%;
     z-index: 0;
     border-bottom: none;
     border-right: none;
@@ -162,10 +162,10 @@ body {
     width: 5px; 
     height: 5px;
     top: -14px;
-    left: 56%;
+    left: 53%;
     z-index: 5;
     border-radius: 50% 50%;
-    background: #000;
+    background: black;
 }
 
 @keyframes swing {
@@ -309,7 +309,7 @@ body {
     align-items: center;
     margin: auto;
     height: 100vh;
-    background-color: lightskyblue;
+    background-color: lightgrey;
 }
 
 .projectsTitle {
@@ -334,7 +334,7 @@ body {
     position: absolute;
     width: 20px;
     height: 20px;
-    border: 1px solid white;
+    border: 1px solid black;
     top: -10px;
     left: 50%;
     z-index: 0;
@@ -352,7 +352,7 @@ body {
     left: 53%;
     z-index: 5;
     border-radius: 50% 50%;
-    background: white;
+    background: black;
 }
 
 .projectsTitleBackground p {
@@ -415,5 +415,111 @@ body {
     transition: ease-in-out;
     transition-duration: 0.5s;
     box-shadow: 3px 3px 10px gray;
+}
 
+#contact {
+    height: 100vh;
+    background-color: lightskyblue;
+    display: flex;
+    justify-content: center;
+}
+
+.contactTitle {
+    text-align: center;
+}
+
+.contactTitleBackground {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    margin-top: 10vh;
+    background-color: white;
+    float: left;
+    width: 250px;
+    height: 140px;
+    box-shadow: 7px 7px 10px grey;
+}
+
+.contactTitleBackground::after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    top: -10px;
+    left: 47%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+
+.contactTitleBackground::before {
+    content:'';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: -14px;
+    left: 50%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: black;
+}
+
+.contactTitleBackground p {
+    font-size: 35px;
+    color: black;
+    text-align: center;
+    padding-top: 20%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.contactText {
+    color: black;
+    position: absolute;
+    margin-top: 40vh;
+    background-color: white;
+    padding: 5vh 5vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+    width: 60vw;
+    border: 10px black double;
+}
+
+.sayHello {
+    font-size: 30px;
+    margin-bottom: 2vh;
+}
+
+.contactMe {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 72.5vh;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 40%;
+    gap: 50px;
+    /* color: black; */
+}
+
+.reachToMe {
+    text-align: right;
+}
+
+.contactMe p {
+    margin: 4% 0;
+}
+
+.contactMe p a {
+    text-decoration: none;
+    color: grey;
+    transition: ease-in-out;
+    transition-duration: 0.1s;
+}
+
+.contactMe p a:hover {
+    text-decoration: none;
+    color: black;
+    transition: ease-in-out;
+    transition-duration: 0.1s;
 }
