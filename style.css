@@ -204,13 +204,25 @@ body {
     text-align: center;
     /* padding: 2% 3%; */
     color: blueviolet;
-    transition: all 0.5s ease;
+    transition: all 1s ease;
+    /* border: black 2px solid; */
 }
 
 .downloadCV button:hover {
     background-color: white;
+    /* border: double black 4px; */
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: all 1s ease;
+}
+
+.techImg {
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.techImg:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
 }
 
 .courseName {
@@ -220,7 +232,7 @@ body {
 .technologiesImages img{
     height: 50px;
     width: 50px;
-    margin: 5px 5px;
+    margin: 15px 5px 0px 5px;
 }
 
 #experience {
@@ -235,6 +247,7 @@ body {
 
 .workExperienceTitle {
     margin-left: 30%;
+    align-content: center;
 }
 
 .sectionTitleBackground {
@@ -280,7 +293,7 @@ body {
     font-size: 35px;
     color: black;
     text-align: center;
-    padding-top: 10%;
+    padding-top: 20%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -392,37 +405,37 @@ body {
 
 .projectsText {
     justify-content: space-evenly;
-    padding-right: 10vw;
+    padding-right: 5vw;
 }
 
 .level {
-    font-size: 22px; 
+    font-size: 20px; 
 }
 
-.beginner, .intermediate {
-    margin: 15px 25px;
+.beginner, .intermediate, .advance {
+    margin: 10px 25px;
 }
 
 .projectName {
-    font-size: 18px;
-    margin: 8px 0;
+    font-size: 17px;
+    margin: 5px 0;
 }
 
 .projectDescription {
     font-size: 14px;
-    margin: 8px 0;
+    margin: 5px 0;
 }
 
 .links {
     display: flex;
-    margin: 8px 0;
+    margin: 5px 0;
 }
 
 .codeLink, .demoLink {
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: 4px;
     border: 1px solid black;
-    padding: 5px;
+    padding: 4px;
     background-color: coral;
     /* border-radius: 5px; */
     color: white;
