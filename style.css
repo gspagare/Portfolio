@@ -6,6 +6,8 @@ body {
     background-color: #eeeeee;
 }
 
+@media screen and (min-width: 768px) {
+    
 .rightpart {
     position: absolute;
     right: 0;
@@ -170,8 +172,12 @@ body {
 }
 
 @keyframes swing {
-    0% { transform: rotate(5deg); }
-    100% { transform: rotate(-5deg); }
+    0% { 
+        transform: rotate(5deg); 
+    }
+    100% { 
+        transform: rotate(-5deg); 
+    }
 }
 
 .aboutMeTitleBackground p, .educationTitleBackground p, .skillsTitleBackground p {
@@ -441,7 +447,6 @@ body {
     color: white;
     transition: ease-in-out;
     transition-duration: 0.5s;
-    /* border: none; */
 }
 
 .codeLink a, .demoLink a {
@@ -582,4 +587,582 @@ body {
 .footer p a {
     text-decoration: none;
     color: white;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .rightpart {
+        position: absolute;
+        display: flex;
+    }
+
+    .rightpart ul {
+        list-style-type: none;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(3, 33.3%);
+        padding: 5px;
+        background-color: rgb(234, 250, 255);
+        position: fixed;
+        z-index: 10000;
+    }
+
+    .rightpart ul p {
+        display: none;
+    }
+
+    .rightpart ul li {
+        text-align: center;
+        padding: 2px 0;
+        margin: 2px 0;
+    }
+
+    .rightpart ul li a {
+        font-size: 18px;
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        font-stretch: ultra-condensed;
+        text-decoration: none;
+        color: black;
+        transition: all ease;
+    }
+
+    .rightpart ul li a:hover {
+        transition: all ease;
+        color: blueviolet;
+        /* text-shadow: black 5px 5px 20px, black -5px -5px 20px; */
+    }
+
+    #front {
+        background-image: url('img/about_part_bg_rotated.png');
+        height: 100%;
+        padding: 2%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .mainText {
+        padding-left: 2%;
+        font-size: 35px;
+        display: block; /* Stack elements */
+        color: rgb(65, 65, 65);
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    }
+
+    .leftMainText {
+        padding-top: 20%;
+        padding-bottom: 20%;
+    }
+
+    .leftMainText h2 span {
+        transition: 0.25s all ease-in-out;
+    }
+    
+    .leftMainText h2 span:hover {
+        color: black;
+        transition: 0.25s all ease-in-out;
+    }
+
+    .g {
+        color: blueviolet;
+        transition: 0.25s all ease-in-out;
+    }
+    
+    .g:hover {
+        color: skyblue;
+        text-shadow: -10px 0 0px blueviolet;
+        transition: 0.25s all ease-in-out;
+    }
+
+    .profileImg {
+        display: flex;
+    }
+
+    .profileImg img {
+        height: 70%;
+        width: 70%;
+        /* z-index: 10; */
+        border-radius: 50%;
+        margin: -30px 15%;
+        transition: 0.25s all ease-out;
+    }
+
+    .profileImg img:hover {
+        height: 70%;
+        width: 70%;
+        box-shadow: black 15px 15px 60px;
+        transition: 0.25s all ease-in;    
+    }
+
+    #about, #education, #skills {
+        /* height: 250vh; */
+        display: block;
+        background-color: #ffd271;
+        padding-top: 18%;
+        padding-bottom: 10%;
+    }
+
+    .aboutMeTitle, .educationTitle, .skillsTitle {
+        text-align: center;
+    }
+    .aboutMe p, #education p, #skills p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 16px;
+        /* line-height: 50px; */
+    }
+
+    .aboutMeTitleBackground, .educationTitleBackground, .skillsTitleBackground {
+        animation: swing ease-in-out 1s infinite alternate;
+        transform-origin: center -20px;
+        position: relative;
+        /* margin-top: 20px !important; */
+        background-color: rgb(0, 0, 0);
+        padding: 10px 20px;
+        width: 60vw;
+        height: 80px;
+        margin: 50px auto 50px auto;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+
+    .aboutMeTitleBackground:after, .educationTitleBackground::after, .skillsTitleBackground::after{
+        content: '';
+        position: absolute;  
+        width: 30px;
+        height: 30px;  
+        border: 2px solid black;
+        top: -14%;
+        left: 44.75%;
+        z-index: 0;
+        border-bottom: none;
+        border-right: none;
+        transform: rotate(45deg);
+    }
+
+    .aboutMeTitleBackground::before, .educationTitleBackground::before, .skillsTitleBackground::before{
+        content: '';
+        position: absolute;
+        width: 5px; 
+        height: 5px;
+        top: -16%;
+        left: 50%;
+        z-index: 5;
+        border-radius: 50% 50%;
+        background: black;
+    }
+
+    @keyframes swing {
+        0% {
+            transform: rotate(-5deg);
+        }
+        100% {
+            transform: rotate(5deg);
+        }
+    }
+
+    .aboutMeTitleBackground p, .educationTitleBackground p, .skillsTitleBackground p {
+        color: white;
+        text-align: center;
+        padding-top: 13%;
+        font-size: 25px !important;
+    }
+
+    .aboutMeText, .educationText, .skillsText {
+        padding: 10px;
+        /* padding-top: 35vh; */
+    }
+
+    .aboutMeText p, .educationText p, .skillsText p {
+        font-size: 18px !important;
+        line-height: 25px;
+    }
+
+    .downloadCV {
+        display: flex;
+        justify-content: center;
+    }
+
+    .downloadCV button {
+        width: 70vw;
+        font-size: 20px;
+        height: 7.5vh;
+        margin: 5% 0% 10% 0%;
+        background-color: #ffd271;
+        text-align: center;
+        /* padding: 2% 3%; */
+        color: blueviolet;
+        transition: all 1s ease;
+        /* border: black 2px solid; */
+    }
+
+    .downloadCV button:hover {
+        background-color: white;
+        /* border: double black 4px; */
+        cursor: pointer;
+        transition: all 1s ease;
+    }
+
+    .techImg {
+        transform: scale(1);
+        transition-duration: 0.5s;
+    }
+
+    .techImg:hover {
+        transform: scale(1.1);
+        transition-duration: 0.5s;
+    }
+    
+    .technologiesImages img{
+        height: 50px;
+        width: 50px;
+        margin: 15px 5px 0px 5px;
+    }
+
+    .courseName {
+        margin: 12px 0;
+    }
+
+    #experience {
+        display: block;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        align-items: center;
+        margin: auto;
+        /* height: 100vh; */
+        /* margin-top: -12%; */
+        padding-top: 18%;
+        padding-bottom: 10%;
+        background-color: black;
+    }
+
+    .workExperienceTitle {
+        /* margin-left: 30%; */
+        align-items: center;
+    }
+
+    .sectionTitleBackground {
+        animation: swing ease-in-out 1s infinite alternate;
+        transform-origin: center -20px;
+        position: relative;
+        /* margin-top: 10vh; */
+        background-color: lightgreen;
+        /* float: left; */
+        padding: 10px 20px;
+        width: 60vw;
+        height: 80px;
+        margin: 50px auto 50px auto;
+        box-shadow: 5px 5px 10px gray;
+    }
+
+    .sectionTitleBackground::after {
+        content: '';
+        position: absolute;  
+        width: 30px;
+        height: 30px;  
+        border: 2px solid white;
+        top: -14%;
+        left: 44.75%;
+        z-index: 0;
+        border-bottom: none;
+        border-right: none;
+        transform: rotate(45deg);
+    }
+
+    .sectionTitleBackground::before {
+        content: '';
+        position: absolute;
+        width: 5px; 
+        height: 5px;
+        top: -16%;
+        left: 50%;
+        z-index: 5;
+        border-radius: 50% 50%;
+        background: white;
+    }
+
+    .sectionTitleBackground p{
+        color: black;
+        text-align: center;
+        padding-top: 13%;
+        font-size: 25px !important;
+    }
+
+    .workExperienceText {
+        padding: 10px;
+    }
+
+    .experiences {
+        padding-top: 5% 0%;
+        padding: 5% 0%;
+    }
+
+    .companyName {
+        font-size: 22px;
+        color: white;
+    }
+
+    .positionName {
+        font-size: 20px;
+        color: #555555;
+        margin-top: 3px;
+        margin-left: 30px;
+    }
+
+    .duration {
+        font-size: 18px;
+        color: #888888;
+        margin-top: 4px;
+        margin-bottom: 2px;
+        margin-left: 30px;
+    }
+
+    .point {
+        font-size: 16px;
+        color: #cccccc;
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        font-stretch: ultra-condensed;
+        font-weight: lighter;
+        margin-bottom: 2px;
+        margin-left: 30px;
+    }
+
+    #projects {
+        display: block;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        align-items: center;
+        margin: auto;
+        /* height: 100vh; */
+        padding-top: 18%;
+        padding-bottom: 10%;
+        background-color: lightgrey;
+    }
+
+    .projectsTitle {
+        align-items: center;
+    }
+
+    .projectsTitleBackground {
+        animation: swing ease-in-out 1s infinite alternate;
+        transform-origin: center -20px;
+        position: relative;
+        /* margin-top: 10vh; */
+        background-color: coral;
+        /* float: left; */
+        padding: 10px 20px;
+        width: 60vw;
+        height: 80px;
+        margin: 50px auto 50px auto;
+        box-shadow: 5px 5px 10px gray;
+    }
+
+    .projectsTitleBackground::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border: 2px solid black;
+        top: -14%;
+        left: 44.75%;
+        z-index: 0;
+        border-bottom: none;
+        border-right: none;
+        transform: rotate(45deg);
+    }
+
+    .projectsTitleBackground::before {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        top: -16%;
+        left: 50%;
+        z-index: 5;
+        border-radius: 50% 50%;
+        background: black;
+    }
+
+    .projectsTitleBackground p {
+        color: black;
+        text-align: center;
+        padding-top: 13%;
+        font-size: 25px !important;
+    }
+
+    .projectsText {
+        justify-content: space-evenly;
+        padding-right: 5vw;
+    }
+
+    .level {
+        font-size: 20px; 
+        margin: 0 5px;
+    }
+
+    .beginner, .intermediate, .advance {
+        margin: 10px 25px;
+    }
+
+    .projectName {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    .projectDescription {
+        font-size: 15px;
+        margin: 5px 0;
+    }
+
+    .links {
+        display: flex;
+        margin: 5px 0;
+    }
+
+    .codeLink, .demoLink {
+        margin-right: 10px;
+        margin-top: 4px;
+        border: 1px solid black;
+        padding: 4px;
+        background-color: rgb(254, 138, 96);
+        /* border-radius: 5px; */
+        transition: ease-in-out;
+        transition-duration: 0.5s;
+    }
+
+    .codeLink a, .demoLink a {
+        color: white;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .codeLink:hover, .demoLink:hover {
+        border: 1.5px solid white;
+        transition: ease-in-out;
+        transition-duration: 0.5s;
+        box-shadow: 3px 3px 10px gray;
+    }
+
+    #contact {
+        display: block;
+        height: 70vh;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        align-items: center;
+        margin: auto;
+        padding-top: 18%;
+        padding-bottom: 10%;
+        background-color: lightskyblue;
+    }
+
+    .contactTitle {
+        text-align: center;
+    }
+
+    .contactTitleBackground {
+        animation: swing ease-in-out 1s infinite alternate;
+        transform-origin: center -20px;
+        position: relative;
+        /* margin-top: 10vh; */
+        background-color: white;
+        /* float: left; */
+        width: 60vw;
+        height: 80px;
+        margin: 50px auto 50px auto;
+        box-shadow: 7px 7px 10px grey;
+    }
+
+    .contactTitleBackground::after {
+        content: '';
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        border: 2px solid black;
+        top: -14%;
+        left: 44.75%;
+        z-index: 0;
+        border-bottom: none;
+        border-right: none;
+        transform: rotate(45deg);
+    }
+
+    .contactTitleBackground::before {
+        content:'';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        top: -16%;
+        left: 50%;
+        z-index: 5;
+        border-radius: 50% 50%;
+        background: black;
+    }
+
+    .contactTitleBackground p {
+        color: black;
+        text-align: center;
+        padding-top: 13%;
+        font-size: 25px !important;
+    }
+
+    .contactText {
+        color: black;
+        position: absolute;
+        margin-top: 2vh;
+        padding: 0 5vw;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 22px;
+    }
+
+    .sayHello {
+        font-size: 26px;
+        margin-bottom: 2vh;
+    }
+
+    .contactMe {
+        position: absolute;
+        display: block;
+        text-align: center;
+        margin: auto;
+        margin-top: 28vh;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .contactMe p {
+        margin: 4px 0;
+    }
+
+    .contactMe p a {
+        text-decoration: none;
+        color: grey;
+        transition: ease-in-out;
+        transition-duration: 0.1s;
+    }
+
+    .contactMe p a:hover {
+        text-decoration: none;
+        color: black;
+        transition: ease-in-out;
+        transition-duration: 0.1s;
+    }
+
+    .footer {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        margin-top: 50vh;
+        width: 100%;
+        height: 5vh;
+        background-color: black;
+    }
+
+    .footer p {
+        margin: auto;
+    }
+
+    .footer p a {
+        text-decoration: none;
+        color: white;
+    }
+
+
+
 }
