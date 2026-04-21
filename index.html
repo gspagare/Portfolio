@@ -4,216 +4,522 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaurav Pagare</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Gaurav Pagare - Full Stack Developer & Deep Learning Practitioner</title>
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" href="img/portfolioLogo.png" type="image/x-icon">
 </head>
 <body>
-    <div class="header">
-        <div class="rightpart">
-            <ul>
-                <li><a href="#about">About Me</a></li><p>|</p>
-                <li><a href="#education">Education</a></li><p>|</p>
-                <li><a href="#skills">Skills</a></li><p>|</p>
-                <li><a href="#experience">Experience</a></li><p>|</p>
-                <li><a href="#projects">Projects</a></li><p>|</p>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Animated Background Shapes -->
+    <div class="animated-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+    
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#front" class="brand-name">GP</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>   
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="front" class="hero-section section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-greeting font-mono">Hi, my name is</p>
+                    <h1 class="hero-name brand-name">
+                        Gaurav Pagare.
+                    </h1>
+                    <h2 class="hero-title">I build things for the web.</h2>
+                    <p class="hero-description">
+                        I'm a <span class="highlight">Full Stack Developer</span>, <span class="highlight">Deep Learning Practitioner</span>, 
+                        and <span class="highlight">DevOps Enthusiast</span> specializing in building exceptional digital experiences.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary"><span>Get In Touch</span></a>
+                        <a href="#projects" class="btn btn-secondary"><span>View My Work</span></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="img/profile.png" alt="Gaurav Pagare">
+                    </div>
         </div>
     </div>
-    <!-- About me -->
-    <section id="front">
-        <div class="mainText">
-            <div class="leftMainText">
-                <h2><span>Hi,</span></h2>
-                <h2><span>I'm </span><span class="g">G</span><span>aurav,</span></h2>
-                <h2><span>Web </span><span>Developer.</span></h2>
-                <!-- <h2><span>Software </span><span>Engineer.</span></h2> -->
             </div>
-            <div class="profileImg"><img src="img/profile.jpeg" alt="profile photo not found"></div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <section id="about">
-        <div class="aboutMe">
-            <div class="aboutMeTitle"><div class="aboutMeTitleBackground"><p>About Me</p></div></div>
-            <div class="aboutMeText">
+    <!-- About Section -->
+    <section id="about" class="about-section section">
+        <div class="about-section-container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
                 <p>Hello,</p> 
-                <p>I'm Gaurav, a passionate Software Engineer and a Gaming Enthusiast.</p>
-                <p>Skilled in web development, Deep Learning, DevOps and DBMS. Experienced in building and maintaining websites, deploying applications and scalable solutions. Passionate about leveraging technology to solve problems and drive innovation through continuous learning.</p>
+                <p>I'm Gaurav, a Full Stack Developer, Deep Learning Practitioner, and DevOps Enthusiast.</p>
+                <p>Experienced in building scalable web applications, deploying AI/ML models, and implementing CI/CD pipelines. Skilled in frontend and backend development, with expertise in WordPress, React, Node.js, and Python. Passionate about leveraging technology to solve real-world problems and drive innovation through continuous learning.</p>
             </div>
-            <div class="downloadCV">
-                <form action="https://drive.google.com/file/d/1cknZueBpnmu814A54Y1MLPYgr8EBASCX/view?usp=drive_link" target="_blank">
-                    <button>Download CV</button>
-                </form>
-            </div>
-        </div>
-        <section id="education">
-            <div class="educationTitle"><div class="educationTitleBackground"><p>Education</p></div></div>
-            <div class="educationText">
-                <div class="collegeInfo">
-                    <p class="collegeName">AISSMS College Of Engineering, Pune</p>
-                    <p class="year">2020 - 2024</p>
-                    <p class="courseName">Computer Engineering: 8.85 CGPA</p>
+                <div class="about-facts">
+                    <span class="badge badge-primary">Full Stack</span>
+                    <span class="badge badge-emerald">AI/ML</span>
+                    <span class="badge badge-violet">DevOps</span>
+                    <span class="badge badge-amber">Problem Solver</span>
                 </div>
-                <div class="collegeInfo">
-                    <p class="collegeName">Z. B. Patil College, Dhule</p>
-                    <p class="year">2019 - 2020</p>
-                    <p class="courseName">HSC (Electronics): 90.62%</p>
-                </div>
-                <div class="collegeInfo">
-                    <p class="collegeName">Garud High School, Dhule</p>
-                    <p class="year">2017 - 2018</p>
-                    <p class="courseName">SSC: 86.60%</p>
+                <div style="margin-top: 2rem;">
+                    <a href="https://drive.google.com/file/d/1cknZueBpnmu814A54Y1MLPYgr8EBASCX/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                        <span>Download CV</span>
+                    </a>
                 </div>
             </div>
-        </section>
-        <section id="skills">
-            <div class="skillsTitle"><div class="skillsTitleBackground"><p>Skills</p></div></div>
-            <div class="skillsText">
-                <p>Web Technologies :</p>
-                <div class="technologiesImages">
-                    <img class="techImg" src="img/html.png" alt="HTML">
-                    <img class="techImg" src="img/css.png" alt="CSS">
-                    <img class="techImg" src="img/js.png" alt="JavaScript">
-                    <img class="techImg" src="img/react.png" alt="React">
-                    <img class="techImg" src="img/wordpress.png" alt="Wordpress">
-                </div>
-                <p>Databse :</p>
-                <div class="technologiesImages">
-                    <img class="techImg" src="img/mysql.png" alt="MySQL">
-                </div>
-                <p>Languages :</p>
-                <div class="technologiesImages">
-                    <img class="techImg" src="img/cpp.png" alt="C++">
-                </div>
-                <p>Repository :</p>
-                <div class="technologiesImages">
-                    <img class="techImg" src="img/github.png" alt="Github">
-                </div>
-            </div>
-        </section>
-    </section>
-
-    <section id="experience">
-        <div class="workExperienceTitle"><div class="sectionTitleBackground"><p>Experience</p></div></div>
-        <div class="workExperienceText">
-            <div class="experiences">
-                <p class="companyName">&#9826;&nbsp;Whole New Level</p>
-                <p class="positionName">Web Developer</p>
-                <p class="duration">August 2023 - Present</p>
-                <p class="point">&diams;&nbsp;Built and maintained over 15 WordPress websites for diverse clients, ensuring high performance and user satisfaction.</p>
-                <p class="point">&diams;&nbsp;Worked on major projects, including Communities Foundation of Texas (CFT) and CCRSM, enhancing accessibility and functionality.</p>
-                <p class="point">&diams;&nbsp;Performed regular maintenance and updates to ensure optimal website performance.</p>
-            </div>
-            <div class="experiences">
-                <p class="companyName">&#9826;&nbsp;Ahen Pvt. Ltd.</p>
-                <p class="positionName">Front-end Developer Intern</p>
-                <p class="duration">December 2022 - January 2023</p>
-                <p class="point">&diams;&nbsp;Collaborated with a team to design and develop responsive front-end interfaces for websites using React.</p>
-                <p class="point">&diams;&nbsp;Ensured pixel-perfect designs, adhering to modern UI/UX standards for enhanced user experience.</p>
-                <p class="point">&diams;&nbsp;Gained experience in function-based architecture and state management.</p>
-            </div>
-            <div class="experiences">
-                <p class="companyName">&#9826;&nbsp;Startup & Innovation Club, AISSMS COE, Pune</p>
-                <p class="positionName">Technical Team Member</p>
-                <p class="duration">June 2022 - April 2023</p>
-                <p class="point">&diams;&nbsp;Designed and maintained the club's website, ensuring a professional and user-friendly interface.</p>
-                <p class="point">&diams;&nbsp;Managed events as a coordinator, overseeing logistics and smooth execution of activities.</p>
-                <p class="point">&diams;&nbsp;Organized meetings to guide students on startup pitching and fostered discussions on innovative ideas.</p>
-            </div>
-            <!-- <div class="experiences">
-                <p class="companyName">&#9826;&nbsp;The Kiran Academy</p>
-                <p class="positionName">Fullstack Web Development Training & Internship</p>
-                <p class="duration">March 2023 - April 2023</p>
-                <p class="point">&diams;&nbsp;Database Administration and SEO</p>
-                <p class="point">&diams;&nbsp;Front and react native developer</p>
-                <p class="point">&diams;&nbsp;Worked on a minor and a major project with the team</p>
-            </div> -->
         </div>
     </section>
 
-    <section id="projects">
-        <div class="projectsTitle"><div class="projectsTitleBackground"><p>Projects</p></div></div>
-        <div class="projectsText">
-            <p class="level">&#9826;&nbsp;Beginner</p>
-            <div class="beginner">
-                <div class="project">
-                    <p class="projectName">&diams;&nbsp;Library Project</p>
-                    <p class="projectDescription">A user-friendly website for our junior engineering students, providing easy access to study materials and past university question papers for various engineering branches in our college.</p>
-                    <div class="links">
-                        <p class="codeLink"><a target="_blank" href="https://github.com/gspagare/Second-Year-PBL-Project">See Code</a></p>
-                        <p class="demoLink"><a target="_blank" href="https://aissmscoelibrary.netlify.app/">See Demo</a></p>
+    <!-- Education Section -->
+    <section id="education" class="education-section section">
+        <div class="education-section-container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card card">
+                        <span class="timeline-period">2020 - 2024</span>
+                        <h3 class="timeline-title">AISSMS College Of Engineering, Pune</h3>
+                        <p class="timeline-subtitle">B.E. Computer Engineering: 8.85 CGPA</p>
                     </div>
                 </div>
-                <div class="project">
-                    <p class="projectName">&diams;&nbsp;Driving School Web Application</p>
-                    <p class="projectDescription">An intermediate-level driving school web application using React, demonstrating my ability to create responsive and user-friendly interfaces. (Duo Project)</p>
-                    <div class="links">
-                        <p class="codeLink"><a target="_blank" href="https://github.com/NeerajAuchar/AHEN-Internship">See Code</a></p>
+                <div class="timeline-item">
+                    <div class="timeline-card card">
+                        <span class="timeline-period">2019 - 2020</span>
+                        <h3 class="timeline-title">Z. B. Patil College, Dhule</h3>
+                        <p class="timeline-subtitle">HSC (Electronics): 90.62%</p>
                     </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card card">
+                        <span class="timeline-period">2017 - 2018</span>
+                        <h3 class="timeline-title">Garud High School, Dhule</h3>
+                        <p class="timeline-subtitle">SSC: 86.60%</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card card">
+                        <h3 class="timeline-title">Publications</h3>
+                        <p class="timeline-subtitle achievement-item">Indian Sign Language Recognition (JOT Journal, 2024)</p>
+                        <p class="timeline-subtitle achievement-item">CNN Inception V3 Review (IJRASET, 2024)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card card">
+                        <h3 class="timeline-title">Leadership</h3>
+                        <p class="timeline-subtitle achievement-item">Technical Team Member - Startup & Innovation Club, AISSMS COE</p>
+                        <p class="timeline-subtitle achievement-item">Event Head - Overtime Aces Tech Fest</p>
+                    </div>
+                </div>
                 </div>
             </div>
-            <p class="level">&#9826;&nbsp;Intermediate</p>
-            <!-- <div class="project">
-                <p class="projectName">Portfolio</p>
-                <p class="projectDescription">A captivating portfolio website using HTML, CSS, and JavaScript, showcasing my proficiency in web development and design.</p>
-                <div class="links">
-                    <p class="codeLink"><a target="_blank" href="https://github.com/gspagare/Portfolio">See Code</a></p>
-                    <p class="demoLink"><a target="_blank" href="https://gauravpagare.netlify.app/">See Demo</a></p>
-                </div>
-            </div> -->
-            <div class="intermediate">
-                <div class="project">
-                    <p class="projectName">&diams;&nbsp;Cineflex - A Movie Ticket Booking System</p>
-                    <p class="projectDescription">Contributed to an intermediate-level movie ticket booking system as part of a collaborative group project. My role involved designing the user-friendly front-end interface using HTML, CSS, and JavaScript, showcasing my work in a team environment.</p>
-                    <div class="links">
-                        <p class="codeLink"><a target="_blank" href="https://github.com/gspagare/CineFlex">See Code</a></p>
+        </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category card">
+                    <h3 class="category-title">Frontend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="img/html.png" alt="HTML5" class="skill-icon">
+                            <span class="skill-name">HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/css.png" alt="CSS3" class="skill-icon">
+                            <span class="skill-name">CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/js.png" alt="JavaScript" class="skill-icon">
+                            <span class="skill-name">JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/react.png" alt="React" class="skill-icon">
+                            <span class="skill-name">React</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/bootstrap.png" alt="Bootstrap" class="skill-icon">
+                            <span class="skill-name">Bootstrap</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/next.png" alt="Next.js" class="skill-icon">
+                            <span class="skill-name">Next.js</span>
+                        </div>
+                        </div>
                     </div>
-                </div>
-                <div class="project">
-                    <p class="projectName">&diams;&nbsp;Online Food Ordering System</p>
-                    <p class="projectDescription">Collaborated on an intermediate-level online food ordering system in a group project, where my focus was on crafting an engaging front-end using HTML, CSS, and JavaScript.</p>
-                    <div class="links">
-                        <p class="codeLink"><a target="_blank" href="https://github.com/gspagare/online-food-ordering-system">See Code</a></p>
-                        <p class="demoLink"><a target="_blank" href="http://onlinefoodorderingsystem.tk/">See Demo</a></p>
+                    
+                <div class="skill-category card">
+                    <h3 class="category-title">Backend & Databases</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="img/php.png" alt="PHP" class="skill-icon">
+                            <span class="skill-name">PHP</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/node.png" alt="Node.js" class="skill-icon">
+                            <span class="skill-name">Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/expressjs.png" alt="Express.js" class="skill-icon">
+                            <span class="skill-name">Express.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/mysql.png" alt="MySQL" class="skill-icon">
+                            <span class="skill-name">MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/mongodb.png" alt="MongoDB" class="skill-icon">
+                            <span class="skill-name">MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/postgres.png" alt="PostgreSQL" class="skill-icon">
+                            <span class="skill-name">PostgreSQL</span>
+                        </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <p class="level">&#9826;&nbsp;Advance</p>
-            <div class="advance">
-                <div class="project">
-                    <p class="projectName">&diams;&nbsp;Indian Sign Language Recognition using Deep Learning</p>
-                    <p class="projectDescription">Led a group of 4 members to Build a deep learning model using Python, Keras, Mediapipe, Tensorflow & Deep Neural Networks like BiLSTM, to capture the gesture, plot the landmarks and recognize the sign performed.</p>
-                    <div class="links">
-                        <p class="codeLink"><a target="_blank" href="https://github.com/gspagare/Real-Time-Gesture-Recognition-Using-Mediapipe-and-BiLSTM">See Code</a></p>
+                    
+                <div class="skill-category card">
+                    <h3 class="category-title">AI/ML & Deep Learning</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="img/python.png" alt="Python" class="skill-icon">
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/tensorflow.png" alt="TensorFlow" class="skill-icon">
+                            <span class="skill-name">TensorFlow</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/deep-learning.png" alt="Deep Learning" class="skill-icon">
+                            <span class="skill-name">Deep Learning</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/scikit-learn.png" alt="Scikit-learn" class="skill-icon">
+                            <span class="skill-name">Scikit-learn</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/jupyter.png" alt="Jupyter" class="skill-icon">
+                            <span class="skill-name">Jupyter</span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                <div class="skill-category card">
+                    <h3 class="category-title">DevOps & Cloud</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="img/docker.png" alt="Docker" class="skill-icon">
+                            <span class="skill-name">Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/jenkins.png" alt="Jenkins" class="skill-icon">
+                            <span class="skill-name">Jenkins</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/cicd.png" alt="CI/CD" class="skill-icon">
+                            <span class="skill-name">CI/CD</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/aws.png" alt="AWS" class="skill-icon">
+                            <span class="skill-name">AWS</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/linux.png" alt="Linux" class="skill-icon">
+                            <span class="skill-name">Linux</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/nginx.png" alt="Nginx" class="skill-icon">
+                            <span class="skill-name">Nginx</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/gcp.png" alt="GCP" class="skill-icon">
+                            <span class="skill-name">GCP</span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                <div class="skill-category card">
+                    <h3 class="category-title">CMS & E-Commerce</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="img/wordpress.png" alt="WordPress" class="skill-icon">
+                            <span class="skill-name">WordPress</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/woocommerce.png" alt="WooCommerce" class="skill-icon">
+                            <span class="skill-name">WooCommerce</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/shopify.png" alt="Shopify" class="skill-icon">
+                            <span class="skill-name">Shopify</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/wix.png" alt="Wix" class="skill-icon">
+                            <span class="skill-name">Wix</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/elementor.png" alt="Elementor" class="skill-icon">
+                            <span class="skill-name">Elementor</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/divi.png" alt="Divi" class="skill-icon">
+                            <span class="skill-name">Divi</span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                <div class="skill-category card">
+                    <h3 class="category-title">Tools & Languages</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="img/cpp.png" alt="C++" class="skill-icon">
+                            <span class="skill-name">C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/github.png" alt="GitHub" class="skill-icon">
+                            <span class="skill-name">GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/git.png" alt="Git" class="skill-icon">
+                            <span class="skill-name">Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/xampp.png" alt="XAMPP" class="skill-icon">
+                            <span class="skill-name">XAMPP</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="img/postman.png" alt="Postman" class="skill-icon">
+                            <span class="skill-name">Postman</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="contact">
-        <div class="contactTitle"><div class="contactTitleBackground"><p>Contact me</p></div></div>
-        <div class="contactText">
-            <p class="sayHello">Say Hello,</p>
-            <p class="contactMessage">I would like to hear from you. Whether you have a question, or want to have a chat, or have an opportunity for me - Shoot me a message.</p>
-        </div>
-        <div class="contactMe">
-            <div class="reachToMe">
-                <p class="reachMeAt">Reach me at</p>
-                <p class="email"><a target="_blank" href="mailto:gspagare03@gmail.com">gspagare03@gmail.com</a></p>
-                <p class="phone"><a target="_blank" href="tel:+917264997994">+91 7264997994</a></p>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-list">
+                <div class="experience-card card">
+                    <h3 class="company-name">Whole New Level</h3>
+                    <p class="position-name">Web Developer</p>
+                    <p class="duration font-mono">August 2023 - Present</p>
+                    <ul class="experience-points">
+                        <li class="experience-point">Built and maintained 15+ WordPress sites including CFT and CCRSM projects, ensuring high performance and user satisfaction.</li>
+                        <li class="experience-point">Implemented e-commerce solutions using WooCommerce for seamless online transactions.</li>
+                        <li class="experience-point">Performed site migrations and performance optimizations to enhance user experience.</li>
+                    </ul>
+                    <p class="tech-stack">Tech Stack: WordPress | Divi/Elementor | JavaScript | MySQL</p>
+                </div>
+                
+                <div class="experience-card card">
+                    <h3 class="company-name">Ahen Pvt. Ltd.</h3>
+                    <p class="position-name">Front-end Developer Intern</p>
+                    <p class="duration font-mono">December 2022 - January 2023</p>
+                    <ul class="experience-points">
+                        <li class="experience-point">Developed responsive UIs with React following modern UX principles and pixel-perfect designs.</li>
+                        <li class="experience-point">Implemented state management for complex web applications in an agile team environment.</li>
+                        <li class="experience-point">Gained experience in function-based architecture and collaborative development practices.</li>
+                    </ul>
+                    <p class="tech-stack">Tech Stack: React | JavaScript | CSS3</p>
             </div>
-            <div class="socials">
-                <p class="socialText">Socials</p>
-                <p class="mySocials"><a target="_blank" href="https://www.linkedin.com/in/gauravspagare/">linkedin.&nbsp;</a><a target="_blank" href="https://github.com/gspagare">Github.</a></p>
-                <p class="mySocials"><a target="_blank" href="https://www.instagram.com/gauravpagare/">Instagram.&nbsp;</a><a target="_blank" href="https://twitter.com/gauravpagare_18">Twitter-X.</a></p>
+                
+                <div class="experience-card card">
+                    <h3 class="company-name">Startup & Innovation Club, AISSMS COE, Pune</h3>
+                    <p class="position-name">Technical Team Member</p>
+                    <p class="duration font-mono">June 2022 - April 2023</p>
+                    <ul class="experience-points">
+                        <li class="experience-point">Designed and maintained the club's website, ensuring a professional and user-friendly interface.</li>
+                        <li class="experience-point">Managed events as a coordinator, overseeing logistics and smooth execution of activities.</li>
+                        <li class="experience-point">Organized meetings to guide students on startup pitching and fostered discussions on innovative ideas.</li>
+                    </ul>
+            </div>
             </div>
         </div>
-        <div class="footer">
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Beginner Projects -->
+                <div class="project-card card">
+                    <span class="project-level">Beginner</span>
+                    <h3 class="project-name">Library Project</h3>
+                    <p class="project-description">A user-friendly website for our junior engineering students, providing easy access to study materials and past university question papers for various engineering branches in our college.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gspagare/Second-Year-PBL-Project" target="_blank" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+                            <span>Code</span>
+                        </a>
+                        <a href="https://aissmscoelibrary.netlify.app/" target="_blank" class="btn btn-primary" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+                            <span>Demo</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card card">
+                    <span class="project-level">Beginner</span>
+                    <h3 class="project-name">Driving School Web Application</h3>
+                    <p class="project-description">An intermediate-level driving school web application using React, demonstrating my ability to create responsive and user-friendly interfaces. (Duo Project)</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/NeerajAuchar/AHEN-Internship" target="_blank" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+                            <span>Code</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Intermediate Projects -->
+                <div class="project-card card">
+                    <span class="project-level">Intermediate</span>
+                    <h3 class="project-name">CineFlex - Movie Ticket Booking System</h3>
+                    <p class="project-description">Full-stack implementation with role-based access control and real-time seat booking system. Developed using PHP and MySQL for backend, with Bootstrap and AJAX for dynamic frontend interactions.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">AJAX</span>
+            </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gspagare/CineFlex" target="_blank" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+                            <span>Code</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card card">
+                    <span class="project-level">Intermediate</span>
+                    <h3 class="project-name">Online Food Ordering System</h3>
+                    <p class="project-description">Collaborated on an intermediate-level online food ordering system in a group project, where my focus was on crafting an engaging front-end using HTML, CSS, and JavaScript.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gspagare/online-food-ordering-system" target="_blank" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+                            <span>Code</span>
+                        </a>
+                        <a href="http://onlinefoodorderingsystem.tk/" target="_blank" class="btn btn-primary" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+                            <span>Demo</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Advanced Projects -->
+                <div class="project-card card">
+                    <span class="project-level">Advanced</span>
+                    <h3 class="project-name">To-Do App with CI/CD Pipeline</h3>
+                    <p class="project-description">Automated deployment using Jenkins & Docker. Containerized application with Docker Compose for seamless development and production environments. Implemented continuous integration and deployment workflows.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">Jenkins</span>
+                        <span class="tech-tag">Docker</span>
+            </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gspagare" target="_blank" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+                            <span>Code</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card card">
+                    <span class="project-level">Advanced</span>
+                    <h3 class="project-name">Indian Sign Language Recognition System</h3>
+                    <p class="project-description">Developed RNN model achieving 92% accuracy for recognizing Indian Sign Language gestures. Created custom Marathi language dataset and implemented real-time gesture recognition using MediaPipe and BiLSTM neural networks.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">MediaPipe</span>
+                        <span class="tech-tag">BiLSTM</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gspagare/Real-Time-Gesture-Recognition-Using-Mediapipe-and-BiLSTM" target="_blank" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+                            <span>Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="contact-greeting">Say Hello</h2>
+                <p class="contact-message">I would like to hear from you. Whether you have a question, or want to have a chat, or have an opportunity for me - Shoot me a message.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-card card">
+                        <h3 class="contact-card-title">Reach me at</h3>
+                        <a href="mailto:gspagare03@gmail.com" class="contact-link">gspagare03@gmail.com</a>
+                        <a href="tel:+917264997994" class="contact-link">+91 7264997994</a>
+                    </div>
+                    
+                    <div class="contact-card card">
+                        <h3 class="contact-card-title">Socials</h3>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/gauravspagare/" target="_blank" class="social-link">LinkedIn</a>
+                            <a href="https://github.com/gspagare" target="_blank" class="social-link">GitHub</a>
+                            <a href="https://www.instagram.com/gauravpagare/" target="_blank" class="social-link">Instagram</a>
+                            <a href="https://twitter.com/gauravpagare_18" target="_blank" class="social-link">Twitter</a>
+                        </div>
+        </div>
+            </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
             <p><a href="https://gauravpagare.netlify.app/">&copy; Gaurav Pagare 2025</a></p>
-        </div>
+        </footer>
     </section>
-<!-- <script src="index.js"></script> -->
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
