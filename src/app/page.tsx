@@ -5,6 +5,7 @@ import projects from "@/data/projects.json";
 import skills from "@/data/skills.json";
 import education from "@/data/education.json";
 import ScrollReveal from "@/components/ScrollReveal";
+import ContactForm from "@/components/ContactForm";
 
 const badgeColors: Record<string, string> = {
   blue: "border-blue-500/30 text-blue-400 bg-blue-500/10",
@@ -298,12 +299,14 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delay={100}>
             <p className="text-[var(--text-muted)] mb-8">
-              Feel free to reach out — I&apos;m always open to discussing new
-              opportunities.
+              Have a question or want to work together? Drop me a message.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <ContactForm />
+          </ScrollReveal>
+          <ScrollReveal delay={300}>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
               <a
                 href={profile.socials.email}
                 className="px-6 py-3 rounded-lg font-semibold text-sm border border-[var(--border-light)] text-[var(--text-primary)] hover:bg-[var(--bg-primary)] hover:border-[var(--accent-primary)] transition-all hover:-translate-y-0.5"

@@ -1,5 +1,5 @@
 # NOTES — Live RAM
-_Updated: Phase 4 DONE_
+_Updated: Phase 6 DONE (Contact Form)_
 
 ## Gaurav — who am I
 - ML Systems Engineer @ Ant Systemz (first hire, reports to CEO)
@@ -8,33 +8,23 @@ _Updated: Phase 4 DONE_
 - Before: Frontend dev (20+ WordPress sites, React)
 - Education: BE Computer Engg, 8.85 CGPA, 2 publications (ISL recognition)
 
-## Phase 1 DONE
-- next-rebuild branch, old files in public/legacy/
+## Phase 1-4 DONE — Full site
 - Next.js 16.3.1 + React 19 + Tailwind 4.3.3 + TS 6
-- profile.png + new resume PDF in public/
+- ThemeProvider, Navbar, Footer, ScrollReveal, card-hover
+- 6 data JSON files, all sections consuming data
+- Build + lint clean, live on gauravpagare.vercel.app
 
-## Phase 2 DONE — Layout Shell
-- ThemeProvider, Navbar (glass, hamburger, active highlight), Footer
-- globals.css with dark/light theme variables
+## Phase 6 DONE — Contact Form
+- src/components/ContactForm.tsx — name/email/message form
+- src/app/api/contact/route.ts — proxies to Formspree
+- Form submits → API route validates → forwards to Formspree
+- Need: FORMSPREE_ENDPOINT env var in Vercel dashboard
+- Setup: formspree.io → create form → copy endpoint → paste in Vercel env
 
-## Phase 3 DONE — Data Layer
-- src/types/index.ts — TypeScript interfaces
-- src/data/ — 6 JSON files (profile, about, experience, projects, skills, education)
-- page.tsx consumes all data, build clean
-
-## Phase 4 DONE — Polish
-- src/components/ScrollReveal.tsx — Intersection Observer fade-in
-- Card hover effects (lift + shadow + border glow)
-- Gradient text on hero name
-- Buttons: hover lift + shadow glow
-- Skill tags: hover accent color
-- Contact: responsive stack on mobile
-- eslint.config.mjs — ESLint 9 flat config (next.js 16 removed next lint)
-
-## What next (Phase 5-6)
-- Deploy to Vercel (push next-rebuild, preview)
-- Final review on live preview
-- Merge to main when ready
+## What next
+- /submissions admin panel (Phase 7)
+- Legacy site test (vercel.app/legacy)
+- Domain swap when ready
 
 ## Commands learned
 - `git add -A` / `git commit -m` / `git push origin branch`
