@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Machine Learning & Speech",
+    "skills": ["PyTorch", "DeepSpeed", "Hugging Face", "PEFT/LoRA", "Whisper", "VAD", "Demucs", "Diarization", "TTS/STT", "Voice Cloning"]
+  },
+  {
+    "name": "MLOps & Orchestration",
+    "skills": ["Prefect", "MLflow", "Docker", "torchrun", "NCCL", "Multi-GPU Training", "CI"]
+  },
+  {
+    "name": "Cloud",
+    "skills": ["GCP", "Vertex AI", "GCS", "Cloud Build", "AWS", "S3", "Lambda", "IAM", "Wasabi", "Akamai"]
+  },
+  {
+    "name": "Backend",
+    "skills": ["Python", "Flask", "Node.js", "PostgreSQL", "MySQL"]
+  },
+  {
+    "name": "Frontend",
+    "skills": ["React", "TypeScript", "Next.js", "JavaScript"]
+  }
+]

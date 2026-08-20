@@ -1,0 +1,51 @@
+[
+  {
+    "id": "ant-systemz",
+    "company": "Ant Systemz Pvt. Ltd.",
+    "role": "Software Engineer, ML Systems & Infrastructure",
+    "location": "Mumbai",
+    "startDate": "Apr 2025",
+    "endDate": null,
+    "current": true,
+    "summary": "First engineering hire; joined the day the technical team was formed and grew with it to ~10 engineers. Reports directly to the CEO.",
+    "bullets": [
+      "Built an end-to-end Whisper fine-tuning platform — audio preprocessing (VAD via pyannote/Silero/Kaldi, Demucs separation, segment-level deduplication, augmentation, QC gates) through distributed training, checkpoint export and cloud sync.",
+      "Productionized multi-GPU training on DeepSpeed ZeRO-2 across 4-GPU nodes; diagnosed and fixed NCCL collective failures, torchrun TCPStore rendezvous hangs, per-rank CUDA device binding, and multi-GPU finalize deadlocks on GCP Blackwell instances.",
+      "Orchestrated preprocessing and training with Prefect and MLflow; added GCS autoresume, hardware-aware GPU/CPU launch, and pre-training readiness checks — enabling unattended multi-day runs.",
+      "Split a monolithic training repository into two stage-modular services, each with its own orchestration and tracking.",
+      "Built the AutoDub speech pipeline — STT, regional TTS, voice cloning and accent conversion — and merged it into the main dubbing application with user workspaces, projects, and a MySQL-to-PostgreSQL consolidation plan.",
+      "Cut the dubbing editor's page load from 4,523 MB to 38 MB transferred (118x) through promise caching, Opus previews, lazy waveform rendering, and a canvas-dimension fix.",
+      "Ran the production Google Drive to S3 migration, including IAM design, S3 access points and multi-worker transfer tooling."
+    ],
+    "tech": ["PyTorch", "DeepSpeed", "Prefect", "MLflow", "Docker", "GCP/Vertex AI", "AWS", "React", "PostgreSQL"],
+    "featured": true
+  },
+  {
+    "id": "whole-new-level",
+    "company": "Whole New Level",
+    "role": "Frontend Web Developer",
+    "location": "Mumbai",
+    "startDate": "Aug 2023",
+    "endDate": "Mar 2025",
+    "current": false,
+    "bullets": [
+      "Built and maintained 20+ WordPress sites including the Communities Foundation of Texas (CFT) and CCRSM projects; implemented WooCommerce flows, site migrations and performance optimization."
+    ],
+    "tech": ["WordPress", "WooCommerce", "PHP", "JavaScript"],
+    "featured": false
+  },
+  {
+    "id": "ahen",
+    "company": "Ahen Pvt. Ltd.",
+    "role": "Frontend Developer Intern",
+    "location": "Pune",
+    "startDate": "Dec 2022",
+    "endDate": "Apr 2023",
+    "current": false,
+    "bullets": [
+      "Built responsive React interfaces to pixel-perfect designs within a function-based architecture."
+    ],
+    "tech": ["React", "JavaScript", "CSS"],
+    "featured": false
+  }
+]

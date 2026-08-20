@@ -1,0 +1,14 @@
+{
+  "paragraphs": [
+    "I build production machine learning systems — mostly speech. I was the first engineer hired at Ant Systemz; the technical team started the day I did, and I've since trained everyone who joined after me.",
+    "In that time I've taken an ASR training stack from an empty repository to distributed multi-GPU training running unattended on cloud instances, and an AI dubbing tool from its first commit to something an internal team uses daily.",
+    "The work lives in an unglamorous middle layer I've grown fond of: the place where a model that works in a notebook has to survive four GPUs, a flaky NCCL collective, a three-day run that must resume exactly where it died, and a product surface that real people click on.",
+    "I came to this from full-stack web development, and it still shows — I'll happily go fix the React editor eating 4.5 GB of memory right after debugging a rendezvous hang."
+  ],
+  "badges": [
+    { "label": "ML Systems", "color": "blue" },
+    { "label": "Speech AI", "color": "emerald" },
+    { "label": "MLOps", "color": "violet" },
+    { "label": "Full Stack", "color": "amber" }
+  ]
+}

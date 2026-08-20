@@ -1,0 +1,21 @@
+{
+  "degree": "B.E. Computer Engineering",
+  "school": "AISSMS College of Engineering",
+  "location": "Pune",
+  "startDate": "2020",
+  "endDate": "2024",
+  "cgpa": "8.85",
+  "research": "Real-time Indian Sign Language recognition — custom Marathi dataset, MediaPipe keypoint extraction, BiLSTM sequence model.",
+  "publications": [
+    {
+      "title": "Indian Sign Language Recognition Using Holistic Body Pose Estimation and Deep Learning",
+      "journal": "JOT",
+      "date": "May 2024"
+    },
+    {
+      "title": "Indian Sign Language Recognition Using CNN Inception V3: A Review",
+      "journal": "IJRASET",
+      "date": "Feb 2024"
+    }
+  ]
+}

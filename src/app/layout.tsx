@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/context/ThemeProvider";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gaurav Pagare | Portfolio",
-  description: "Personal portfolio of Gaurav Pagare",
+  title: "Gaurav Pagare | ML Systems Engineer",
+  description:
+    "ML Systems Engineer — Speech AI, distributed training, MLOps. Building systems that put speech AI into production.",
 };
 
 export default function RootLayout({
@@ -12,8 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <body>
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

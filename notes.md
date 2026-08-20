@@ -1,41 +1,64 @@
 # NOTES — Live RAM
-_Updated: Phase 1 DONE_
+_Updated: Phase 4 DONE_
 
-## What we doing
-- Rebuild portfolio: vanilla HTML → Next.js + Tailwind v4 + TS
-- Old code on main (Netlify safe) — next-rebuild branch (Vercel)
-
-## Decisions made
-- App Router, Tailwind v4 CSS-based, Dark+Light toggle
-- Single page, desktop-first design, mobile-first CSS
-- JSON data files + TS types, /submissions as phase 7
-- Legacy old code at vercel.app/legacy
+## Gaurav — who am I
+- ML Systems Engineer @ Ant Systemz (first hire, reports to CEO)
+- Speech AI: Whisper training platform, AutoDub/VOIT dubbing
+- Infra: DeepSpeed multi-GPU, NCCL debug, GCP/AWS, Prefect/MLflow
+- Before: Frontend dev (20+ WordPress sites, React)
+- Education: BE Computer Engg, 8.85 CGPA, 2 publications (ISL recognition)
 
 ## Phase 1 DONE
-- next-rebuild branch created, old files in public/legacy/
+- next-rebuild branch, old files in public/legacy/
 - Next.js 16.3.1 + React 19 + Tailwind 4.3.3 + TS 6
-- Config: tsconfig.json, next.config.ts, postcss.config.mjs
-- Starter: src/app/layout.tsx, page.tsx, globals.css
-- npm run dev works on localhost:3000
-- package.json scripts: dev (turbopack), build, start, lint
+- profile.png + new resume PDF in public/
 
-## What next (Phase 2)
-- Build Navbar (glass style, theme toggle, responsive)
-- Build Footer (social links, copyright)
-- ThemeProvider (dark/light, localStorage)
-- Smooth scroll + active nav highlight
+## Phase 2 DONE — Layout Shell
+- ThemeProvider, Navbar (glass, hamburger, active highlight), Footer
+- globals.css with dark/light theme variables
+
+## Phase 3 DONE — Data Layer
+- src/types/index.ts — TypeScript interfaces
+- src/data/ — 6 JSON files (profile, about, experience, projects, skills, education)
+- page.tsx consumes all data, build clean
+
+## Phase 4 DONE — Polish
+- src/components/ScrollReveal.tsx — Intersection Observer fade-in
+- Card hover effects (lift + shadow + border glow)
+- Gradient text on hero name
+- Buttons: hover lift + shadow glow
+- Skill tags: hover accent color
+- Contact: responsive stack on mobile
+- eslint.config.mjs — ESLint 9 flat config (next.js 16 removed next lint)
+
+## What next (Phase 5-6)
+- Deploy to Vercel (push next-rebuild, preview)
+- Final review on live preview
+- Merge to main when ready
 
 ## Commands learned
-- `git checkout -b name` — create + switch branch
-- `git clean -f file` — delete untracked file
-- `git branch --show-current` — which branch am I on
-- `npm run dev` — start Next.js dev server
-- `npm run build` — build for production
-- `Remove-Item file -Force` — delete file (PS)
-- `Remove-Item -Recurse -Force folder` — delete folder (PS)
+- `git add -A` / `git commit -m` / `git push origin branch`
+- `npm run build` — test production build
+- `npm run lint` — ESLint check (uses eslint src/ not next lint)
+- `npm run dev` — dev server localhost:3000
 
 ## Gotchas
-- npm 11 needs allowScripts in package.json for postinstall hooks
-- PowerShell Out-File encoding: use [System.IO.File]::WriteAllText for utf8
-- Tailwind v4 = CSS config (no tailwind.config.ts), use @import "tailwindcss"
-- create-next-app hates capital folder names — use lowercase or manual init
+- @/* alias maps to src/* — data/ and types/ must be inside src/
+- All 4 projects private repos — no demo/GitHub links
+- Next.js 16 removed `next lint` — use `eslint src/` directly
+- ThemeProvider: avoid setState in useEffect, use getInitialTheme function
+- Tailwind v4 = CSS config, no tailwind.config.ts
+
+## Commands learned
+- `git add -A` — stage all changes
+- `git commit -m "msg"` — save snapshot locally
+- `git push origin branch` — send to GitHub
+- `npm run build` — production build (test for errors)
+- `npm run dev` — start dev server
+
+## Gotchas
+- @/* alias maps to src/* — data/ and types/ must be inside src/
+- All 4 projects are private repos — no demo/GitHub links
+- CV download = PDF in public/ (no Google Drive link)
+- Tailwind v4 = CSS config, no tailwind.config.ts
+- Theme: CSS variables in globals.css, not Tailwind config
