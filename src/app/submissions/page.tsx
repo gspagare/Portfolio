@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, type FormEvent } from "react";
+import { useState, useEffect, useRef, type FormEvent } from "react";
 
 interface Submission {
   id: string;
@@ -10,21 +10,37 @@ interface Submission {
   date: string;
 }
 
-function getInitialAuth(): { authenticated: boolean; password: string } {
-  if (typeof window === "undefined")
-    return { authenticated: false, password: "" };
-  const stored = sessionStorage.getItem("submissions_auth");
-  if (stored) return { authenticated: true, password: stored };
-  return { authenticated: false, password: "" };
-}
-
 export default function SubmissionsPage() {
-  const initial = getInitialAuth();
-  const [password, setPassword] = useState(initial.password);
-  const [authenticated, setAuthenticated] = useState(initial.authenticated);
+  const [authenticated, setAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const hydrated = useRef(false);
+
+  useEffect(() => {
+    if (hydrated.current) return;
+    hydrated.current = true;
+    const stored = sessionStorage.getItem("submissions_auth");
+    if (!stored) return;
+    (async () => {
+      try {
+        const res = await fetch("/api/submissions", {
+          headers: { authorization: `Bearer ${stored}` },
+        });
+        if (res.status === 401) {
+          sessionStorage.removeItem("submissions_auth");
+          return;
+        }
+        const data = await res.json();
+        setSubmissions(data.submissions || []);
+        setAuthenticated(true);
+        setPassword(stored);
+      } catch {
+        // ignore on mount
+      }
+    })();
+  }, []);
 
   const doFetch = async (pw: string) => {
     setLoading(true);
@@ -35,7 +51,6 @@ export default function SubmissionsPage() {
       });
       if (res.status === 401) {
         setError("Wrong password");
-        setAuthenticated(false);
         sessionStorage.removeItem("submissions_auth");
         setLoading(false);
         return;
@@ -43,42 +58,13 @@ export default function SubmissionsPage() {
       const data = await res.json();
       setSubmissions(data.submissions || []);
       setAuthenticated(true);
+      setPassword(pw);
       sessionStorage.setItem("submissions_auth", pw);
     } catch {
       setError("Failed to load");
     }
     setLoading(false);
   };
-
-  useEffect(() => {
-    if (!authenticated) return;
-    let cancelled = false;
-    (async () => {
-      setLoading(true);
-      setError("");
-      try {
-        const res = await fetch("/api/submissions", {
-          headers: { authorization: `Bearer ${password}` },
-        });
-        if (cancelled) return;
-        if (res.status === 401) {
-          setError("Wrong password");
-          setAuthenticated(false);
-          sessionStorage.removeItem("submissions_auth");
-          setLoading(false);
-          return;
-        }
-        const data = await res.json();
-        setSubmissions(data.submissions || []);
-      } catch {
-        if (!cancelled) setError("Failed to load");
-      }
-      if (!cancelled) setLoading(false);
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [authenticated, password]);
 
   const handleLogin = (e: FormEvent) => {
     e.preventDefault();
@@ -125,7 +111,7 @@ export default function SubmissionsPage() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] py-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-center mb-8">
           <h1 className="text-3xl font-bold text-[var(--text-primary)]">
             Submissions
             <span className="ml-3 text-lg font-normal text-[var(--text-muted)]">
@@ -134,14 +120,14 @@ export default function SubmissionsPage() {
           </h1>
           <button
             onClick={handleLogout}
-            className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+            className="ml-auto text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
           >
             Logout
           </button>
         </div>
 
         {submissions.length === 0 ? (
-          <p className="text-[var(--text-muted)]">No submissions yet.</p>
+          <p className="text-center text-[var(--text-muted)]">No submissions yet.</p>
         ) : (
           <div className="space-y-4">
             {submissions.map((sub) => (

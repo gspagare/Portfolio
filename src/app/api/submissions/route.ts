@@ -12,10 +12,7 @@ export async function GET(req: NextRequest) {
 
   const redis = getRedis();
   if (!redis) {
-    return NextResponse.json(
-      { error: "Redis not configured" },
-      { status: 500 }
-    );
+    return NextResponse.json({ submissions: [] });
   }
 
   try {
@@ -23,9 +20,6 @@ export async function GET(req: NextRequest) {
     const submissions = raw.map((r) => JSON.parse(r));
     return NextResponse.json({ submissions });
   } catch {
-    return NextResponse.json(
-      { error: "Failed to fetch submissions" },
-      { status: 500 }
-    );
+    return NextResponse.json({ submissions: [] });
   }
 }
