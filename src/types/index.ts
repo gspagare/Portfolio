@@ -40,6 +40,7 @@ export interface Project {
   id: string;
   title: string;
   level: "featured" | "advanced";
+  commits?: number;
   description: string;
   tech: string[];
   private: boolean;

@@ -220,6 +220,11 @@ export default function Home() {
                         FEATURED
                       </span>
                     )}
+                    {proj.commits && (
+                      <span className="text-xs px-2 py-0.5 rounded bg-[var(--text-muted)]/10 text-[var(--text-muted)]">
+                        {proj.commits} commits
+                      </span>
+                    )}
                     {proj.private && (
                       <span className="text-xs px-2 py-0.5 rounded bg-[var(--text-muted)]/10 text-[var(--text-muted)]">
                         Private
