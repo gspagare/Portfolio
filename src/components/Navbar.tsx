@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "@/context/ThemeProvider";
 
 const navLinks = [
@@ -14,6 +16,9 @@ const navLinks = [
 
 export default function Navbar() {
   const { theme, toggle } = useTheme();
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -39,6 +44,10 @@ export default function Navbar() {
 
   const handleClick = (href: string) => {
     setMobileOpen(false);
+    if (!isHome) {
+      router.push(`/${href}`);
+      return;
+    }
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -54,18 +63,37 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-6xl flex items-center justify-between px-6 h-16">
-        <a
-          href="#front"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          className="text-xl font-bold bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent"
-        >
-          GP
-        </a>
+        {isHome ? (
+          <a
+            href="#front"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="text-xl font-bold bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent"
+          >
+            GP
+          </a>
+        ) : (
+          <Link
+            href="/"
+            className="text-xl font-bold bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent"
+          >
+            GP
+          </Link>
+        )}
 
         <ul className="hidden md:flex items-center gap-1">
+          {!isHome && (
+            <li>
+              <Link
+                href="/"
+                className="px-3 py-2 text-sm rounded-lg transition-colors duration-200 text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
+              >
+                Home
+              </Link>
+            </li>
+          )}
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -124,6 +152,17 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-[var(--bg-glass-strong)] backdrop-blur-xl border-t border-[var(--border-light)]">
           <ul className="flex flex-col p-4 gap-1">
+            {!isHome && (
+              <li>
+                <Link
+                  href="/"
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-4 py-3 rounded-lg text-sm transition-colors text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
+                >
+                  Home
+                </Link>
+              </li>
+            )}
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a

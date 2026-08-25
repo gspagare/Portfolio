@@ -14,7 +14,6 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  let redisError = "";
   const redis = getRedis();
   if (redis) {
     try {
@@ -26,11 +25,9 @@ export async function POST(req: NextRequest) {
         date: new Date().toISOString(),
       };
       await redis.lpush("submissions", JSON.stringify(submission));
-    } catch (e) {
-      redisError = e instanceof Error ? e.message : String(e);
+    } catch {
+      // Redis storage failed — don't block the form submission
     }
-  } else {
-    redisError = "getRedis() returned null";
   }
 
   if (!FORMSPREE_ENDPOINT) {
@@ -54,7 +51,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({ success: true, redisError: redisError || undefined });
+    return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json(
       { error: "Network error" },

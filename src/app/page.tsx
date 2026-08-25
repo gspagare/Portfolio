@@ -210,7 +210,7 @@ export default function Home() {
                 <div
                   className={`rounded-xl border p-6 card-hover h-full ${
                     proj.level === "featured"
-                      ? "border-[var(--accent-primary)]/30 bg-[var(--bg-primary)]"
+                      ? "border-[var(--accent-primary)] bg-[var(--bg-primary)]"
                       : "border-[var(--border-light)] bg-[var(--bg-primary)]"
                   }`}
                 >
