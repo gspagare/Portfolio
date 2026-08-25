@@ -44,13 +44,15 @@ _Updated: Phase 7 DONE (Submissions Admin)_
 
 ## Phase 7 DONE — Submissions Admin Panel
 - Upstash Redis for storage (replaces old Vercel KV)
-- src/lib/redis.ts — Redis client (uses KV_REST_API_URL + KV_REST_API_TOKEN)
+- src/lib/redis.ts — lazy-init Redis client (getRedis())
 - /api/contact now stores in Redis AND sends to Formspree
 - /api/submissions — password-protected GET, returns all submissions
 - /submissions — password gate + card-based table, session-persistent auth
 - Env vars needed: KV_REST_API_URL, KV_REST_API_TOKEN (auto), ADMIN_PASSWORD (manual)
+- Debug: clean up debug fields from API responses before final
 
 ## What next
+- Clean up debug fields from API responses (low priority)
 - Legacy site test (vercel.app/legacy)
 - Domain swap when ready
 
@@ -70,3 +72,5 @@ _Updated: Phase 7 DONE (Submissions Admin)_
 - Vercel: after changing env/branch, must Redeploy (not just push)
 - Upstash = what Vercel KV became. Env vars: KV_REST_API_URL + KV_REST_API_TOKEN
 - Submissions page: avoid setState in useEffect — use getInitial function pattern
+- @upstash/redis: lpush stores JSON but lrange auto-deserializes — handle both string and object
+- Upstash Redis client: lazy-init (getRedis()) to avoid crash at import time if env vars missing
