@@ -1,15 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+import { redis } from "@/lib/redis";
 
 const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT || "";
 
 export async function POST(req: NextRequest) {
-  if (!FORMSPREE_ENDPOINT) {
-    return NextResponse.json(
-      { error: "Formspree endpoint not configured" },
-      { status: 500 }
-    );
-  }
-
   const body = await req.json();
   const { name, email, message } = body;
 
@@ -17,6 +11,27 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       { error: "All fields required" },
       { status: 400 }
+    );
+  }
+
+  const submission = {
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+    name,
+    email,
+    message,
+    date: new Date().toISOString(),
+  };
+
+  try {
+    await redis.lpush("submissions", JSON.stringify(submission));
+  } catch {
+    // Redis storage failed — don't block the form submission
+  }
+
+  if (!FORMSPREE_ENDPOINT) {
+    return NextResponse.json(
+      { error: "Formspree endpoint not configured" },
+      { status: 500 }
     );
   }
 
