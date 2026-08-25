@@ -28,30 +28,42 @@ export default function Navbar() {
       setScrolled(window.scrollY > 20);
 
       const sections = navLinks.map((l) => l.href.slice(1));
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i]);
-        if (el && el.getBoundingClientRect().top <= 120) {
-          setActiveSection(sections[i]);
-          return;
+      let best = "";
+      let bestTop = Infinity;
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top;
+        if (top <= 100 && top > -200 && Math.abs(top) < Math.abs(bestTop)) {
+          best = id;
+          bestTop = top;
         }
       }
-      setActiveSection("");
+      setActiveSection(best);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (href: string) => {
-    setMobileOpen(false);
-    if (!isHome) {
-      router.push(`/${href}`);
-      return;
-    }
+  const scrollToHash = (href: string) => {
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
+      window.history.replaceState(null, "", href);
     }
+  };
+
+  const handleClick = (href: string) => {
+    setMobileOpen(false);
+    if (!isHome) {
+      router.push("/");
+      requestAnimationFrame(() => {
+        setTimeout(() => scrollToHash(href), 100);
+      });
+      return;
+    }
+    scrollToHash(href);
   };
 
   return (
