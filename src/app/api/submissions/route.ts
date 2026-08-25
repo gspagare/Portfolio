@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { redis } from "@/lib/redis";
+import { getRedis } from "@/lib/redis";
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
 
@@ -8,6 +8,14 @@ export async function GET(req: NextRequest) {
 
   if (!auth || auth !== `Bearer ${ADMIN_PASSWORD}`) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const redis = getRedis();
+  if (!redis) {
+    return NextResponse.json(
+      { error: "Redis not configured" },
+      { status: 500 }
+    );
   }
 
   try {

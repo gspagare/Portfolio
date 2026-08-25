@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { redis } from "@/lib/redis";
+import { getRedis } from "@/lib/redis";
 
 const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT || "";
 
@@ -14,18 +14,20 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const submission = {
-    id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
-    name,
-    email,
-    message,
-    date: new Date().toISOString(),
-  };
-
-  try {
-    await redis.lpush("submissions", JSON.stringify(submission));
-  } catch {
-    // Redis storage failed — don't block the form submission
+  const redis = getRedis();
+  if (redis) {
+    try {
+      const submission = {
+        id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+        name,
+        email,
+        message,
+        date: new Date().toISOString(),
+      };
+      await redis.lpush("submissions", JSON.stringify(submission));
+    } catch {
+      // Redis storage failed — don't block the form submission
+    }
   }
 
   if (!FORMSPREE_ENDPOINT) {
