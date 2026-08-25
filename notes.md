@@ -1,5 +1,5 @@
 # NOTES — Live RAM
-_Updated: Content fix + Phase 6 DONE_
+_Updated: Phase 7 DONE (Submissions Admin)_
 
 ## Gaurav — who am I
 - ML Systems Engineer @ Ant Systemz (first hire, reports to CEO)
@@ -42,9 +42,15 @@ _Updated: Content fix + Phase 6 DONE_
 - Fixed about.json dubbing paragraph
 - Added "428 commits across 9 repositories" to experience summary
 
+## Phase 7 DONE — Submissions Admin Panel
+- Upstash Redis for storage (replaces old Vercel KV)
+- src/lib/redis.ts — Redis client (uses KV_REST_API_URL + KV_REST_API_TOKEN)
+- /api/contact now stores in Redis AND sends to Formspree
+- /api/submissions — password-protected GET, returns all submissions
+- /submissions — password gate + card-based table, session-persistent auth
+- Env vars needed: KV_REST_API_URL, KV_REST_API_TOKEN (auto), ADMIN_PASSWORD (manual)
+
 ## What next
-- /submissions admin panel (Phase 7)
-- Push content fix to Vercel
 - Legacy site test (vercel.app/legacy)
 - Domain swap when ready
 
@@ -62,3 +68,5 @@ _Updated: Content fix + Phase 6 DONE_
 - Tailwind v4 = CSS config, no tailwind.config.ts
 - Vercel: Production branch must be set to next-rebuild (not main)
 - Vercel: after changing env/branch, must Redeploy (not just push)
+- Upstash = what Vercel KV became. Env vars: KV_REST_API_URL + KV_REST_API_TOKEN
+- Submissions page: avoid setState in useEffect — use getInitial function pattern
