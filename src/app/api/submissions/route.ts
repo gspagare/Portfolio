@@ -16,8 +16,8 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const raw = await redis.lrange<string>("submissions", 0, -1);
-    const submissions = raw.map((r) => JSON.parse(r));
+    const raw = await redis.lrange<string | Record<string, unknown>>("submissions", 0, -1);
+    const submissions = raw.map((r) => (typeof r === "string" ? JSON.parse(r) : r));
     return NextResponse.json({ debug: `lrange returned ${raw.length} items`, submissions });
   } catch (e) {
     return NextResponse.json({ debug: e instanceof Error ? e.message : String(e), submissions: [] });
