@@ -12,14 +12,14 @@ export async function GET(req: NextRequest) {
 
   const redis = getRedis();
   if (!redis) {
-    return NextResponse.json({ submissions: [] });
+    return NextResponse.json({ debug: "getRedis() returned null", submissions: [] });
   }
 
   try {
     const raw = await redis.lrange<string>("submissions", 0, -1);
     const submissions = raw.map((r) => JSON.parse(r));
-    return NextResponse.json({ submissions });
-  } catch {
-    return NextResponse.json({ submissions: [] });
+    return NextResponse.json({ debug: `lrange returned ${raw.length} items`, submissions });
+  } catch (e) {
+    return NextResponse.json({ debug: e instanceof Error ? e.message : String(e), submissions: [] });
   }
 }
