@@ -1,12 +1,23 @@
 # NOTES — Live RAM
-_Updated: Phase 6 DONE (Contact Form)_
+_Updated: Content fix + Phase 6 DONE_
 
 ## Gaurav — who am I
 - ML Systems Engineer @ Ant Systemz (first hire, reports to CEO)
-- Speech AI: Whisper training platform, AutoDub/VOIT dubbing
+- Speech AI: Whisper training platform (195 commits), VOIT dubbing (104 commits)
+- AutoDub: separate internal testing platform (19 commits), NOT the product
 - Infra: DeepSpeed multi-GPU, NCCL debug, GCP/AWS, Prefect/MLflow
 - Before: Frontend dev (20+ WordPress sites, React)
 - Education: BE Computer Engg, 8.85 CGPA, 2 publications (ISL recognition)
+- 428 commits across 9 repositories
+
+## Content rules (NEVER break these)
+- VOIT and AutoDub are TWO DIFFERENT SYSTEMS — never merge them
+- Never name speech/AI vendors (ElevenLabs, Qwen, Deepgram are PRIVATE)
+- Fine to name: cloud providers (AWS, GCP) + public models (Whisper, pyannote, etc.)
+- 118x is DATA TRANSFERRED, not load time (4,523 MB → 38 MB)
+- Corpus: 2,000 hours per language, 20 languages
+- Never mention data scraping
+- No salary, no internal conflict, no colleague names
 
 ## Phase 1-4 DONE — Full site
 - Next.js 16.3.1 + React 19 + Tailwind 4.3.3 + TS 6
@@ -21,8 +32,19 @@ _Updated: Phase 6 DONE (Contact Form)_
 - Need: FORMSPREE_ENDPOINT env var in Vercel dashboard
 - Setup: formspree.io → create form → copy endpoint → paste in Vercel env
 
+## Content fix DONE — portfolio aligned with resume
+- Split VOIT and AutoDub into separate project cards
+- Removed vendor names (ElevenLabs, Qwen, Deepgram) from projects.json
+- Added founding commit story for VOIT
+- Fixed corpus: "2,000 hours per language across 20 languages"
+- Added commit counts (195, 104, 19, 97) to project cards
+- Updated experience bullets with VOIT/AutoDub separation
+- Fixed about.json dubbing paragraph
+- Added "428 commits across 9 repositories" to experience summary
+
 ## What next
 - /submissions admin panel (Phase 7)
+- Push content fix to Vercel
 - Legacy site test (vercel.app/legacy)
 - Domain swap when ready
 
@@ -38,17 +60,5 @@ _Updated: Phase 6 DONE (Contact Form)_
 - Next.js 16 removed `next lint` — use `eslint src/` directly
 - ThemeProvider: avoid setState in useEffect, use getInitialTheme function
 - Tailwind v4 = CSS config, no tailwind.config.ts
-
-## Commands learned
-- `git add -A` — stage all changes
-- `git commit -m "msg"` — save snapshot locally
-- `git push origin branch` — send to GitHub
-- `npm run build` — production build (test for errors)
-- `npm run dev` — start dev server
-
-## Gotchas
-- @/* alias maps to src/* — data/ and types/ must be inside src/
-- All 4 projects are private repos — no demo/GitHub links
-- CV download = PDF in public/ (no Google Drive link)
-- Tailwind v4 = CSS config, no tailwind.config.ts
-- Theme: CSS variables in globals.css, not Tailwind config
+- Vercel: Production branch must be set to next-rebuild (not main)
+- Vercel: after changing env/branch, must Redeploy (not just push)
