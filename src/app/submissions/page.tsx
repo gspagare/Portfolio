@@ -1,14 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, type FormEvent } from "react";
-
-interface Submission {
-  id: string;
-  name: string;
-  email: string;
-  message: string;
-  date: string;
-}
+import type { Submission } from "@/types";
 
 export default function SubmissionsPage() {
   const [authenticated, setAuthenticated] = useState(false);

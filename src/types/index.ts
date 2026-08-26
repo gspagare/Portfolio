@@ -63,3 +63,11 @@ export interface Education {
   research?: string;
   publications: { title: string; journal: string; date: string }[];
 }
+
+export interface Submission {
+  id: string;
+  name: string;
+  email: string;
+  message: string;
+  date: string;
+}

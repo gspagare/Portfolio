@@ -48,10 +48,11 @@ export default function Navbar() {
 
   const scrollToHash = (href: string) => {
     const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-      window.history.replaceState(null, "", href);
-    }
+    if (!el) return;
+    const navHeight = 100;
+    const y = el.getBoundingClientRect().top + window.scrollY - navHeight;
+    window.scrollTo({ top: y, behavior: "smooth" });
+    window.history.replaceState(null, "", href);
   };
 
   const handleClick = (href: string) => {
