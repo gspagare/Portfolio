@@ -1,22 +1,22 @@
 [
   {
-    "name": "Machine Learning & Speech",
-    "skills": ["PyTorch", "DeepSpeed", "Hugging Face", "PEFT/LoRA", "Whisper", "VAD", "Demucs", "Diarization", "TTS/STT", "Voice Cloning"]
+    "name": "ML & Speech",
+    "skills": ["PyTorch", "DeepSpeed", "Hugging Face", "PEFT/LoRA", "Whisper", "VAD", "Demucs", "Diarization", "TTS/STT", "Voice Cloning", "Data Augmentation"]
   },
   {
-    "name": "MLOps & Orchestration",
-    "skills": ["Prefect", "MLflow", "Docker", "torchrun", "NCCL", "Multi-GPU Training", "CI"]
+    "name": "MLOps",
+    "skills": ["Prefect", "MLflow", "Docker", "torchrun", "NCCL", "Multi-GPU Training", "Autoresume & Checkpointing", "CI"]
   },
   {
     "name": "Cloud",
-    "skills": ["GCP", "Vertex AI", "GCS", "Cloud Build", "AWS", "S3", "Lambda", "IAM", "Wasabi", "Akamai"]
+    "skills": ["GCP", "Vertex AI", "GCS", "Cloud Build", "GCE", "AWS", "S3", "Lambda", "IAM", "rclone"]
   },
   {
     "name": "Backend",
-    "skills": ["Python", "Flask", "Node.js", "PostgreSQL", "MySQL"]
+    "skills": ["Python", "Flask", "Node.js", "PostgreSQL", "MySQL", "REST APIs"]
   },
   {
     "name": "Frontend",
-    "skills": ["React", "TypeScript", "Next.js", "JavaScript"]
+    "skills": ["React", "TypeScript", "JavaScript", "Next.js"]
   }
 ]

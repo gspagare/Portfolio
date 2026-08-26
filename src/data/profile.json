@@ -1,7 +1,7 @@
 {
   "name": "Gaurav Pagare",
   "initials": "GP",
-  "title": "ML Systems Engineer",
+  "title": "Machine Learning / AI Systems Engineer",
   "tagline": "Hi, my name is",
   "description": "I build the systems that put speech AI into production — ASR training pipelines, distributed multi-GPU training, and the cloud infrastructure underneath them.",
   "chips": ["SPEECH AI", "DISTRIBUTED TRAINING", "MLOps", "FULL STACK"],
@@ -10,7 +10,7 @@
   "location": "Pune, Maharashtra",
   "socials": {
     "github": "https://github.com/gspagare",
-    "linkedin": "https://linkedin.com/in/gauravspagare",
+    "linkedin": "https://www.linkedin.com/in/gauravspagare/",
     "email": "mailto:gspagare03@gmail.com"
   },
   "cvUrl": "/Gaurav_Pagare_Resume.pdf",
