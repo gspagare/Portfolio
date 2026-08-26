@@ -49,7 +49,7 @@ export default function Navbar() {
   const scrollToHash = (href: string) => {
     const el = document.querySelector(href);
     if (!el) return;
-    const navHeight = 100;
+    const navHeight = 80;
     const y = el.getBoundingClientRect().top + window.scrollY - navHeight;
     window.scrollTo({ top: y, behavior: "smooth" });
     window.history.replaceState(null, "", href);
@@ -59,9 +59,15 @@ export default function Navbar() {
     setMobileOpen(false);
     if (!isHome) {
       router.push("/");
-      requestAnimationFrame(() => {
-        setTimeout(() => scrollToHash(href), 100);
-      });
+      const tryScroll = (attempts = 0) => {
+        const el = document.querySelector(href);
+        if (el || attempts > 20) {
+          scrollToHash(href);
+          return;
+        }
+        requestAnimationFrame(() => tryScroll(attempts + 1));
+      };
+      requestAnimationFrame(() => setTimeout(() => tryScroll(), 50));
       return;
     }
     scrollToHash(href);
