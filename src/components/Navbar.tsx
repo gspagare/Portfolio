@@ -49,7 +49,7 @@ export default function Navbar() {
   const scrollToHash = (href: string) => {
     const el = document.querySelector(href);
     if (!el) return;
-    const navHeight = 80;
+    const navHeight = 64;
     const y = el.getBoundingClientRect().top + window.scrollY - navHeight;
     window.scrollTo({ top: y, behavior: "smooth" });
     window.history.replaceState(null, "", href);
