@@ -81,6 +81,7 @@ export default function Navbar() {
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
+              window.history.replaceState(null, "", "#front");
             }}
             className="text-xl font-bold bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent"
           >
@@ -88,7 +89,7 @@ export default function Navbar() {
           </a>
         ) : (
           <Link
-            href="/"
+            href="/#front"
             className="text-xl font-bold bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent"
           >
             GP
@@ -99,7 +100,7 @@ export default function Navbar() {
           {!isHome && (
             <li>
               <Link
-                href="/"
+                href="/#front"
                 className="px-3 py-2 text-sm rounded-lg transition-colors duration-200 text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
               >
                 Home
@@ -167,7 +168,7 @@ export default function Navbar() {
             {!isHome && (
               <li>
                 <Link
-                  href="/"
+                  href="/#front"
                   onClick={() => setMobileOpen(false)}
                   className="block px-4 py-3 rounded-lg text-sm transition-colors text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
                 >

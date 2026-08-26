@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gaurav Pagare | ML Systems Engineer",
+  title: "Gaurav Pagare | Software Engineer — ML Systems & Infrastructure",
   description:
-    "ML Systems Engineer — Speech AI, distributed training, MLOps. Building systems that put speech AI into production.",
+    "Software Engineer — ML Systems & Infrastructure. Speech AI, distributed training, MLOps. Building systems that put speech AI into production.",
 };
 
 export default function RootLayout({
