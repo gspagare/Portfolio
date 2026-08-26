@@ -15,7 +15,7 @@
     "title": "VOIT — Production Dubbing Platform",
     "level": "featured",
     "commits": 104,
-    "description": "The company's live dubbing application. Wrote its first commit in April 2025 and built the original version end to end — transcription, translation, synthesis, Devanagari script handling, S3-backed staged storage, Lambda, and the migration to PostgreSQL. Dual-provider Voice Library with emotion and per-line variants and self-healing repair; normalized voice enrolment across providers. Chunked TTS with duration capping and speech-preserving timed placement. Cut editor page load 118x — 4,523 MB to 38 MB transferred, 13 GB to 176 MB of decoded resources.",
+    "description": "The company's live dubbing application. Wrote its first commit in April 2025 and built the original version end to end — transcription, translation, synthesis, Devanagari script handling, S3-backed staged storage with thread parallelism, AWS Lambda for audio extraction and auth, and the migration to PostgreSQL. Dual-provider Voice Library with emotion and per-line variants and self-healing repair; normalized voice enrolment across providers. Chunked TTS with duration capping and speech-preserving timed placement. Cut editor page load 118x — 4,523 MB to 38 MB transferred, 13 GB to 176 MB of decoded resources.",
     "tech": ["Python", "React", "TypeScript", "PostgreSQL", "AWS S3", "Lambda"],
     "private": true,
     "github": null,
