@@ -12,7 +12,7 @@ export default function Skills() {
           {skills.map((cat, idx) => (
             <ScrollReveal key={cat.name} delay={idx * 80}>
               <div className="rounded-xl border border-[var(--border-light)] bg-[var(--bg-secondary)] p-6 card-hover h-full">
-                <h3 className="text-lg font-bold mb-4 text-[var(--text-primary)]">
+                  <h3 className="text-lg font-bold mb-4 text-[var(--text-primary)]">
                   {cat.name}
                 </h3>
                 <div className="flex flex-wrap gap-2">

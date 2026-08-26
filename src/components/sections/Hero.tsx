@@ -7,14 +7,14 @@ export default function Hero() {
       id="front"
       className="min-h-screen flex items-center justify-center px-6"
     >
-      <div className="max-w-4xl text-center">
+      <div className="max-w-4xl text-center overflow-visible">
         <ScrollReveal>
           <p className="text-sm font-mono text-[var(--accent-primary)] mb-4">
             {profile.tagline}
           </p>
         </ScrollReveal>
-        <ScrollReveal delay={100}>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 gradient-text">
+        <ScrollReveal delay={100} className="overflow-visible">
+          <h1 className="text-5xl md:text-7xl font-pacifico mb-4 pb-5 gradient-text overflow-visible leading-[1.2]">
             {profile.name}.
           </h1>
         </ScrollReveal>
