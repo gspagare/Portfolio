@@ -1,6 +1,8 @@
 import skills from "@/data/skills.json";
 import ScrollReveal from "@/components/ScrollReveal";
 import CardGlow from "@/components/CardGlow";
+import SliderPill from "@/components/SliderPill";
+import TiltCard from "@/components/TiltCard";
 
 export default function Skills() {
   return (
@@ -12,21 +14,24 @@ export default function Skills() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((cat, idx) => (
             <ScrollReveal key={cat.name} delay={idx * 80}>
-              <CardGlow className="rounded-xl border border-[var(--border-light)] bg-[var(--bg-primary)] p-6 card-hover h-full">
+              <TiltCard className="h-full">
+                <CardGlow className="rounded-xl border border-[var(--border-light)] bg-[var(--bg-primary)] p-6 card-hover h-full">
                   <h3 className="text-lg font-bold mb-4 text-[var(--text-primary)]">
                   {cat.name}
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <SliderPill className="flex flex-wrap gap-2">
                   {cat.skills.map((s) => (
                     <span
                       key={s}
-                      className="px-3 py-1 text-xs rounded-full border border-[var(--border-light)] text-[var(--text-muted)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-colors"
+                      data-slide
+                      className="relative px-3 py-1 text-xs rounded-full text-[var(--text-muted)] hover:text-[var(--accent-primary)] transition-colors"
                     >
                       {s}
                     </span>
                   ))}
-                </div>
+                </SliderPill>
               </CardGlow>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

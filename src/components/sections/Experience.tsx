@@ -1,6 +1,7 @@
 import experience from "@/data/experience.json";
 import ScrollReveal from "@/components/ScrollReveal";
 import CardGlow from "@/components/CardGlow";
+import TiltCard from "@/components/TiltCard";
 
 export default function Experience() {
   return (
@@ -12,7 +13,8 @@ export default function Experience() {
         <div className="space-y-8">
           {experience.map((job, idx) => (
             <ScrollReveal key={job.id} delay={idx * 100}>
-              <CardGlow className="rounded-xl border border-[var(--border-light)] bg-[var(--bg-primary)] p-6 card-hover">
+              <TiltCard>
+                <CardGlow className="rounded-xl border border-[var(--border-light)] bg-[var(--bg-primary)] p-6 card-hover">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                   <div>
                     <h3 className="text-xl font-bold">{job.role}</h3>
@@ -44,13 +46,14 @@ export default function Experience() {
                   {job.tech.map((t) => (
                     <span
                       key={t}
-                      className="px-2 py-0.5 text-xs rounded bg-[var(--bg-secondary)] text-[var(--text-muted)] border border-[var(--border-light)]"
+                      className="chip-sweep px-2 py-0.5 text-xs rounded text-[var(--text-muted)]"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
               </CardGlow>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

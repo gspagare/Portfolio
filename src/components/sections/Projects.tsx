@@ -1,6 +1,7 @@
 import projects from "@/data/projects.json";
 import ScrollReveal from "@/components/ScrollReveal";
 import CardGlow from "@/components/CardGlow";
+import TiltCard from "@/components/TiltCard";
 
 export default function Projects() {
   return (
@@ -12,7 +13,8 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((proj, idx) => (
             <ScrollReveal key={proj.id} delay={idx * 100}>
-              <CardGlow
+              <TiltCard className="h-full">
+                <CardGlow
                 className={`rounded-xl border p-6 card-hover h-full ${
                   proj.level === "featured"
                     ? "border-[var(--accent-primary)] bg-[var(--bg-primary)]"
@@ -44,13 +46,14 @@ export default function Projects() {
                   {proj.tech.map((t) => (
                     <span
                       key={t}
-                      className="px-2 py-0.5 text-xs rounded bg-[var(--bg-secondary)] text-[var(--text-muted)] border border-[var(--border-light)]"
+                      className="chip-sheen px-2 py-0.5 text-xs rounded bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-muted)]"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
               </CardGlow>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

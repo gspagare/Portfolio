@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import profile from "@/data/profile.json";
 import ScrollReveal from "@/components/ScrollReveal";
+import SliderPill from "@/components/SliderPill";
 
 export default function Hero() {
   return (
@@ -27,16 +28,17 @@ export default function Hero() {
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={300}>
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <SliderPill className="flex flex-wrap justify-center gap-3 mb-10">
             {profile.chips.map((chip) => (
               <span
                 key={chip}
-                className="px-4 py-1.5 text-xs font-medium rounded-full border border-[var(--border-light)] text-[var(--text-muted)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-colors"
+                data-slide
+                className="relative px-4 py-1.5 text-xs font-medium rounded-full text-[var(--text-muted)] hover:text-[var(--accent-primary)] transition-colors"
               >
                 {chip}
               </span>
             ))}
-          </div>
+          </SliderPill>
         </ScrollReveal>
         <ScrollReveal delay={400}>
           <div className="flex justify-center gap-4">
