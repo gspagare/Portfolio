@@ -33,7 +33,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-lg">
       <div>
         <input
           name="name"

@@ -52,6 +52,9 @@
   --bg-pattern-opacity: 0.05;
 
   --card-glow: rgba(59, 130, 246, 0.14);
+
+  --nav-h: 64px;
+  --footer-h: 52px;
 }
 
 [data-theme="light"] {

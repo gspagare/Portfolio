@@ -1,21 +1,41 @@
 {
-  "degree": "B.E. Computer Engineering",
-  "school": "AISSMS College of Engineering",
-  "location": "Pune",
-  "startDate": "2020",
-  "endDate": "2024",
-  "cgpa": "8.85",
-  "research": "Real-time Indian Sign Language recognition — custom Marathi dataset, MediaPipe keypoint extraction, BiLSTM sequence model.",
-  "publications": [
+  "entries": [
     {
-      "title": "Indian Sign Language Recognition Using Holistic Body Pose Estimation and Deep Learning",
-      "journal": "JOT",
-      "date": "May 2024"
+      "degree": "B.E. Computer Engineering",
+      "school": "AISSMS College of Engineering",
+      "location": "Pune",
+      "startDate": "2020",
+      "endDate": "2024",
+      "score": "8.85 CGPA",
+      "research": "Real-time Indian Sign Language recognition — custom Marathi dataset, MediaPipe keypoint extraction, BiLSTM sequence model.",
+      "publications": [
+        {
+          "title": "Indian Sign Language Recognition Using Holistic Body Pose Estimation and Deep Learning",
+          "journal": "JOT",
+          "date": "May 2024"
+        },
+        {
+          "title": "Indian Sign Language Recognition Using CNN Inception V3: A Review",
+          "journal": "IJRASET",
+          "date": "Feb 2024"
+        }
+      ]
     },
     {
-      "title": "Indian Sign Language Recognition Using CNN Inception V3: A Review",
-      "journal": "IJRASET",
-      "date": "Feb 2024"
+      "degree": "HSC (Electronics)",
+      "school": "Z. B. Patil College",
+      "location": "Dhule",
+      "startDate": "2019",
+      "endDate": "2020",
+      "score": "90.62%"
+    },
+    {
+      "degree": "SSC",
+      "school": "Garud High School",
+      "location": "Dhule",
+      "startDate": "2017",
+      "endDate": "2018",
+      "score": "86.60%"
     }
   ]
 }

@@ -1,16 +1,15 @@
 import skills from "@/data/skills.json";
 import ScrollReveal from "@/components/ScrollReveal";
+import SectionTitle from "@/components/SectionTitle";
 import CardGlow from "@/components/CardGlow";
 import SliderPill from "@/components/SliderPill";
 import TiltCard from "@/components/TiltCard";
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6">
+    <section id="skills" className="py-12 md:py-16 px-6">
       <div className="max-w-4xl mx-auto">
-        <ScrollReveal>
-          <h2 className="text-3xl font-bold mb-8">Skills</h2>
-        </ScrollReveal>
+        <SectionTitle index="03" title="Skills" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((cat, idx) => (
             <ScrollReveal key={cat.name} delay={idx * 80}>

@@ -1,6 +1,7 @@
 import about from "@/data/about.json";
 import profile from "@/data/profile.json";
 import ScrollReveal from "@/components/ScrollReveal";
+import SectionTitle from "@/components/SectionTitle";
 
 const badgeColors: Record<string, string> = {
   blue: "border-blue-500/30 text-blue-400 bg-blue-500/10",
@@ -11,11 +12,9 @@ const badgeColors: Record<string, string> = {
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="py-12 md:py-16 px-6">
       <div className="max-w-4xl mx-auto">
-        <ScrollReveal>
-          <h2 className="text-3xl font-bold mb-8">About Me</h2>
-        </ScrollReveal>
+        <SectionTitle index="01" title="About Me" />
         <ScrollReveal delay={100}>
           <div className="space-y-4 mb-8">
             {about.paragraphs.map((p, i) => (

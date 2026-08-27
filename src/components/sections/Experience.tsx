@@ -1,15 +1,14 @@
 import experience from "@/data/experience.json";
 import ScrollReveal from "@/components/ScrollReveal";
+import SectionTitle from "@/components/SectionTitle";
 import CardGlow from "@/components/CardGlow";
 import TiltCard from "@/components/TiltCard";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6">
+    <section id="experience" className="py-12 md:py-16 px-6">
       <div className="max-w-4xl mx-auto">
-        <ScrollReveal>
-          <h2 className="text-3xl font-bold mb-8">Experience</h2>
-        </ScrollReveal>
+        <SectionTitle index="02" title="Experience" />
         <div className="space-y-8">
           {experience.map((job, idx) => (
             <ScrollReveal key={job.id} delay={idx * 100}>
