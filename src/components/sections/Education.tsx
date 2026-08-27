@@ -9,7 +9,7 @@ export default function Education() {
           <h2 className="text-3xl font-bold mb-8">Education</h2>
         </ScrollReveal>
         <ScrollReveal delay={100}>
-          <div className="rounded-xl border border-[var(--border-light)] bg-[var(--bg-secondary)] p-6">
+          <div className="rounded-xl border border-[var(--border-light)] bg-[var(--bg-secondary)] p-6 card-hover">
             <h3 className="text-xl font-bold">{education.degree}</h3>
             <p className="text-[var(--accent-primary)] font-medium">
               {education.school}

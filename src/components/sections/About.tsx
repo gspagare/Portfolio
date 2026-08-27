@@ -45,8 +45,7 @@ export default function About() {
             href={profile.cvUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-3 rounded-lg font-semibold text-sm text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all hover:-translate-y-0.5"
-            style={{ background: "var(--gradient-primary)" }}
+            className="inline-block px-6 py-3 rounded-lg font-semibold text-sm btn-gradient"
           >
             Download CV
           </a>
