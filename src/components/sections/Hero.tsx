@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import profile from "@/data/profile.json";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -37,19 +40,24 @@ export default function Hero() {
         </ScrollReveal>
         <ScrollReveal delay={400}>
           <div className="flex justify-center gap-4">
-            <a
+            <motion.a
               href="#contact"
-              className="px-6 py-3 rounded-lg font-semibold text-sm text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all hover:-translate-y-0.5"
-              style={{ background: "var(--gradient-primary)" }}
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ y: 0, scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="px-6 py-3 rounded-lg font-semibold text-sm btn-gradient"
             >
               Get In Touch
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#projects"
-              className="px-6 py-3 rounded-lg font-semibold text-sm border border-[var(--border-light)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-all hover:-translate-y-0.5"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="px-6 py-3 rounded-lg font-semibold text-sm border border-[var(--border-light)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-colors"
             >
               View My Work
-            </a>
+            </motion.a>
           </div>
         </ScrollReveal>
       </div>

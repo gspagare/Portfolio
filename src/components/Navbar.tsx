@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "@/context/ThemeProvider";
 
@@ -111,22 +112,32 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-1 pr-20">
           {!isHome && (
             <li>
-              <Link
+              <motion.a
                 href="/#front"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleClick("#front");
+                }}
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="px-3 py-2 text-base font-outfit rounded-lg transition-colors duration-200 text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
               >
                 Home
-              </Link>
+              </motion.a>
             </li>
           )}
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <motion.a
                 href={link.href}
                 onClick={(e) => {
                   e.preventDefault();
                   handleClick(link.href);
                 }}
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className={`px-3 py-2 text-base font-outfit rounded-lg transition-colors duration-200 ${
                   activeSection === link.href.slice(1)
                     ? "text-[var(--accent-primary)] bg-[var(--accent-primary)]/10"
@@ -134,14 +145,17 @@ export default function Navbar() {
                 }`}
               >
                 {link.label}
-              </a>
+              </motion.a>
             </li>
           ))}
         </ul>
 
         <div className="flex items-center gap-3">
-          <button
+          <motion.button
             onClick={toggle}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="p-2 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors"
             aria-label="Toggle theme"
           >
@@ -154,10 +168,13 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
               </svg>
             )}
-          </button>
+          </motion.button>
 
-          <button
+          <motion.button
             onClick={() => setMobileOpen(!mobileOpen)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="md:hidden p-2 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors"
             aria-label="Toggle menu"
           >
@@ -170,7 +187,7 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
-          </button>
+          </motion.button>
         </div>
       </div>
 
@@ -179,23 +196,31 @@ export default function Navbar() {
           <ul className="flex flex-col p-4 gap-1">
             {!isHome && (
               <li>
-                <Link
+                <motion.a
                   href="/#front"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileOpen(false);
+                    handleClick("#front");
+                  }}
+                  whileHover={{ x: 2 }}
+                  whileTap={{ scale: 0.97 }}
                   className="block px-4 py-3 rounded-lg text-base font-outfit transition-colors text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
                 >
                   Home
-                </Link>
+                </motion.a>
               </li>
             )}
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <motion.a
                   href={link.href}
                   onClick={(e) => {
                     e.preventDefault();
                     handleClick(link.href);
                   }}
+                  whileHover={{ x: 2 }}
+                  whileTap={{ scale: 0.97 }}
                   className={`block px-4 py-3 rounded-lg text-base font-outfit transition-colors ${
                     activeSection === link.href.slice(1)
                       ? "text-[var(--accent-primary)] bg-[var(--accent-primary)]/10"
@@ -203,7 +228,7 @@ export default function Navbar() {
                   }`}
                 >
                   {link.label}
-                </a>
+                </motion.a>
               </li>
             ))}
           </ul>
