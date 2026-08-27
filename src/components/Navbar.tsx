@@ -92,11 +92,19 @@ export default function Navbar() {
             }}
             className="flex items-center"
           >
-            <img src="/logo/image.png" alt="GP Logo" className="h-[90px] w-auto" />
+            <img
+              src={theme === "dark" ? "/logo/dark-theme.png" : "/logo/light-theme.png"}
+              alt="GP Logo"
+              className="h-[81px] w-auto"
+            />
           </a>
         ) : (
           <Link href="/#front" className="flex items-center">
-            <img src="/logo/image.png" alt="GP Logo" className="h-[90px] w-auto" />
+            <img
+              src={theme === "dark" ? "/logo/dark-theme.png" : "/logo/light-theme.png"}
+              alt="GP Logo"
+              className="h-[81px] w-auto"
+            />
           </Link>
         )}
 
@@ -105,7 +113,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/#front"
-                className="px-3 py-2 text-sm rounded-lg transition-colors duration-200 text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
+                className="px-3 py-2 text-base font-outfit rounded-lg transition-colors duration-200 text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
               >
                 Home
               </Link>
@@ -119,7 +127,7 @@ export default function Navbar() {
                   e.preventDefault();
                   handleClick(link.href);
                 }}
-                className={`px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
+                className={`px-3 py-2 text-base font-outfit rounded-lg transition-colors duration-200 ${
                   activeSection === link.href.slice(1)
                     ? "text-[var(--accent-primary)] bg-[var(--accent-primary)]/10"
                     : "text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
@@ -174,7 +182,7 @@ export default function Navbar() {
                 <Link
                   href="/#front"
                   onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 rounded-lg text-sm transition-colors text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
+                  className="block px-4 py-3 rounded-lg text-base font-outfit transition-colors text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
                 >
                   Home
                 </Link>
@@ -188,7 +196,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleClick(link.href);
                   }}
-                  className={`block px-4 py-3 rounded-lg text-sm transition-colors ${
+                  className={`block px-4 py-3 rounded-lg text-base font-outfit transition-colors ${
                     activeSection === link.href.slice(1)
                       ? "text-[var(--accent-primary)] bg-[var(--accent-primary)]/10"
                       : "text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"

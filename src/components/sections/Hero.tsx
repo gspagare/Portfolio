@@ -9,7 +9,7 @@ export default function Hero() {
     >
       <div className="max-w-4xl text-center overflow-visible">
         <ScrollReveal>
-          <p className="text-sm font-mono text-[var(--accent-primary)] mb-4">
+          <p className="text-lg font-outfit text-[var(--accent-primary)] mb-4">
             {profile.tagline}
           </p>
         </ScrollReveal>
