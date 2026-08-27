@@ -3,12 +3,12 @@ import {
   Outfit,
   DM_Sans,
   JetBrains_Mono,
-  Faster_One,
   Pacifico,
 } from "next/font/google";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackgroundFX from "@/components/BackgroundFX";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -26,13 +26,6 @@ const dmSans = DM_Sans({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
-  display: "swap",
-});
-
-const fasterOne = Faster_One({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-faster-one",
   display: "swap",
 });
 
@@ -62,10 +55,11 @@ export default function RootLayout({
       lang="en"
       data-theme="dark"
       suppressHydrationWarning
-      className={`${outfit.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${fasterOne.variable} ${pacifico.variable}`}
+      className={`${outfit.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${pacifico.variable}`}
     >
       <body>
         <ThemeProvider>
+          <BackgroundFX />
           <Navbar />
           <main>{children}</main>
           <Footer />

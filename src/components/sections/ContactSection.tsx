@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 px-6 bg-[var(--bg-secondary)]">
+    <section id="contact" className="py-24 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <ScrollReveal>
           <h2 className="text-3xl font-bold mb-4">Contact</h2>

@@ -3,7 +3,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6 bg-[var(--bg-secondary)]">
+    <section id="experience" className="py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <ScrollReveal>
           <h2 className="text-3xl font-bold mb-8">Experience</h2>
