@@ -1,5 +1,6 @@
 import experience from "@/data/experience.json";
 import ScrollReveal from "@/components/ScrollReveal";
+import CardGlow from "@/components/CardGlow";
 
 export default function Experience() {
   return (
@@ -11,7 +12,7 @@ export default function Experience() {
         <div className="space-y-8">
           {experience.map((job, idx) => (
             <ScrollReveal key={job.id} delay={idx * 100}>
-              <div className="rounded-xl border border-[var(--border-light)] bg-[var(--bg-primary)] p-6 card-hover">
+              <CardGlow className="rounded-xl border border-[var(--border-light)] bg-[var(--bg-primary)] p-6 card-hover">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                   <div>
                     <h3 className="text-xl font-bold">{job.role}</h3>
@@ -49,7 +50,7 @@ export default function Experience() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </CardGlow>
             </ScrollReveal>
           ))}
         </div>

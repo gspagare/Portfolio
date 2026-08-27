@@ -1,5 +1,6 @@
 import projects from "@/data/projects.json";
 import ScrollReveal from "@/components/ScrollReveal";
+import CardGlow from "@/components/CardGlow";
 
 export default function Projects() {
   return (
@@ -11,7 +12,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((proj, idx) => (
             <ScrollReveal key={proj.id} delay={idx * 100}>
-              <div
+              <CardGlow
                 className={`rounded-xl border p-6 card-hover h-full ${
                   proj.level === "featured"
                     ? "border-[var(--accent-primary)] bg-[var(--bg-primary)]"
@@ -49,7 +50,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </CardGlow>
             </ScrollReveal>
           ))}
         </div>

@@ -50,6 +50,8 @@
   --radius-full: 9999px;
 
   --bg-pattern-opacity: 0.05;
+
+  --card-glow: rgba(59, 130, 246, 0.14);
 }
 
 [data-theme="light"] {
@@ -100,6 +102,8 @@
   --radius-full: 9999px;
 
   --bg-pattern-opacity: 0.03;
+
+  --card-glow: rgba(59, 130, 246, 0.12);
 }
 
 /* ========== Base Styles ========== */
@@ -378,6 +382,45 @@ h1, h2, h3 {
   .bg-fx-canvas {
     display: none;
   }
+}
+
+/* ========== Cursor Spotlight ========== */
+
+.cursor-spotlight {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--spotlight-glow) 0%,
+    var(--spotlight-glow) 20%,
+    transparent 65%
+  );
+  will-change: transform;
+}
+
+/* ========== Card Mouse Glow ========== */
+
+.card-glow {
+  position: relative;
+}
+
+.card-glow-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    var(--card-glow) 0%,
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-glow:hover .card-glow-overlay {
+  opacity: 1;
 }
 
 /* ========== Gradient Button ========== */
