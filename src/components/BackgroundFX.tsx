@@ -12,17 +12,18 @@ export default function BackgroundFX() {
     const reduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    if (reduced || window.innerWidth < 768) return;
+    if (reduced) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const isMobile = window.innerWidth < 768;
     let width = window.innerWidth;
     let height = window.innerHeight;
     let rafId = 0;
 
-    const PARTICLE_COUNT = 80;
-    const CONNECTION_DISTANCE = 180;
+    const PARTICLE_COUNT = isMobile ? 32 : 80;
+    const CONNECTION_DISTANCE = isMobile ? 120 : 180;
 
     type Particle = {
       x: number;
@@ -90,12 +91,16 @@ export default function BackgroundFX() {
     const drawParticles = () => {
       for (const p of particles) {
         ctx.fillStyle = `rgba(59, 130, 246, ${p.opacity})`;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = "rgba(59, 130, 246, 0.8)";
+        if (!isMobile) {
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = "rgba(59, 130, 246, 0.8)";
+        }
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
-        ctx.shadowBlur = 0;
+        if (!isMobile) {
+          ctx.shadowBlur = 0;
+        }
       }
     };
 
