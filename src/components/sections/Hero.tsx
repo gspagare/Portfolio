@@ -37,102 +37,111 @@ export default function Hero() {
 
   return (
     <section id="front" className="relative min-h-svh flex flex-col">
-      <div className="flex-1 flex items-center justify-center px-6">
+      <div className="flex-1 flex justify-center px-6 pt-[calc(var(--nav-h)+40px)] pb-24">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="max-w-4xl text-center overflow-visible"
+          className="grid w-full max-w-5xl lg:grid-cols-[1.1fr_0.9fr] lg:gap-16"
         >
           <motion.div
             variants={item}
-            className="flex justify-center mb-5 overflow-visible"
+            className="relative flex self-center justify-center lg:justify-end lg:col-start-2 lg:row-start-1 mb-8 lg:mb-0"
           >
-            <div className="rounded-full bg-[var(--gradient-primary)] p-[3px] shadow-[var(--glow-primary)]">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 rounded-full bg-[var(--gradient-primary)] opacity-25 blur-2xl"
+            />
+            <div className="relative rounded-full bg-[var(--gradient-primary)] p-[3px] shadow-[var(--glow-primary)]">
               <Image
                 src={profile.profileImage}
                 alt="Gaurav Pagare"
-                width={176}
-                height={176}
+                width={320}
+                height={320}
                 priority
-                className="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover object-top"
+                className="h-32 w-32 sm:h-44 sm:w-44 lg:h-80 lg:w-80 rounded-full object-cover object-top"
               />
             </div>
           </motion.div>
 
-          <motion.p
-            variants={item}
-            className="text-base md:text-lg font-outfit text-[var(--accent-primary)] mb-3"
-          >
-            {profile.tagline}
-          </motion.p>
+          <div className="text-center lg:text-left lg:col-start-1 lg:row-start-1 overflow-visible">
+            <motion.p
+              variants={item}
+              className="text-base md:text-lg font-outfit text-[var(--accent-primary)] mb-3"
+            >
+              {profile.tagline}
+            </motion.p>
 
-          <motion.h1
-            variants={item}
-            className="text-5xl md:text-7xl font-pacifico mb-4 pb-1 gradient-text overflow-visible leading-[1.2]"
-          >
-            {profile.name}.
-          </motion.h1>
+            <motion.h1
+              variants={item}
+              className="text-5xl md:text-6xl font-pacifico mb-4 gradient-text overflow-visible leading-[1.5] py-3"
+            >
+              {profile.name}.
+            </motion.h1>
 
-          <motion.div variants={item} className="flex justify-center mb-4 overflow-visible">
-            <AnimatePresence mode="wait">
-              <motion.h2
-                key={roleIndex}
-                initial={{ y: 14, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -14, opacity: 0 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
-                className="text-xl md:text-3xl font-semibold text-[var(--text-secondary)] leading-snug"
-              >
-                {profile.roles[roleIndex]}
-                <span className="text-[var(--accent-primary)]">.</span>
-              </motion.h2>
-            </AnimatePresence>
-          </motion.div>
-
-          <motion.p
-            variants={item}
-            className="text-sm md:text-lg text-[var(--text-muted)] max-w-2xl mx-auto mb-6 leading-relaxed"
-          >
-            {profile.description}
-          </motion.p>
-
-          <motion.div variants={item} className="overflow-visible">
-            <SliderPill className="flex flex-wrap justify-center gap-3 mb-8">
-              {profile.chips.map((chip) => (
-                <span
-                  key={chip}
-                  data-slide
-                  className="relative px-4 py-1.5 text-xs font-medium rounded-full text-[var(--text-muted)] hover:text-[var(--accent-primary)] transition-colors"
+            <motion.div variants={item} className="mb-4 overflow-visible">
+              <AnimatePresence mode="wait">
+                <motion.h2
+                  key={roleIndex}
+                  initial={{ y: 14, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -14, opacity: 0 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className="text-xl md:text-3xl font-semibold text-[var(--text-secondary)] leading-snug"
                 >
-                  {chip}
-                </span>
-              ))}
-            </SliderPill>
-          </motion.div>
+                  {profile.roles[roleIndex]}
+                  <span className="text-[var(--accent-primary)]">.</span>
+                </motion.h2>
+              </AnimatePresence>
+            </motion.div>
 
-          <motion.div variants={item} className="flex justify-center gap-8">
-            <Magnetic strength={0.3} className="inline-block">
-              <motion.a
-                href="#contact"
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="block px-6 py-3 rounded-lg font-semibold text-sm btn-gradient"
-              >
-                Get In Touch
-              </motion.a>
-            </Magnetic>
-            <Magnetic strength={0.3} className="inline-block">
-              <motion.a
-                href="#projects"
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="block px-6 py-3 rounded-lg font-semibold text-sm border border-[var(--border-light)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-colors"
-              >
-                View My Work
-              </motion.a>
-            </Magnetic>
-          </motion.div>
+            <motion.p
+              variants={item}
+              className="text-sm md:text-lg text-[var(--text-muted)] max-w-xl mx-auto lg:mx-0 mb-6 leading-relaxed"
+            >
+              {profile.description}
+            </motion.p>
+
+            <motion.div variants={item} className="overflow-visible">
+              <SliderPill className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
+                {profile.chips.map((chip) => (
+                  <span
+                    key={chip}
+                    data-slide
+                    className="relative px-4 py-1.5 text-xs font-medium rounded-full text-[var(--text-muted)] hover:text-[var(--accent-primary)] transition-colors"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </SliderPill>
+            </motion.div>
+
+            <motion.div
+              variants={item}
+              className="flex justify-center lg:justify-start gap-8"
+            >
+              <Magnetic strength={0.3} className="inline-block">
+                <motion.a
+                  href="#contact"
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="block px-6 py-3 rounded-lg font-semibold text-sm btn-gradient"
+                >
+                  Get In Touch
+                </motion.a>
+              </Magnetic>
+              <Magnetic strength={0.3} className="inline-block">
+                <motion.a
+                  href="#projects"
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="block px-6 py-3 rounded-lg font-semibold text-sm border border-[rgba(59,130,246,0.45)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-colors"
+                >
+                  View My Work
+                </motion.a>
+              </Magnetic>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
 
