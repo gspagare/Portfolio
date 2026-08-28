@@ -47,12 +47,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const smoothScrollTo = (y: number) => {
+    if (window.__lenis) {
+      window.__lenis.scrollTo(y, { duration: 1.2 });
+    } else {
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   const scrollToHash = (href: string) => {
     const el = document.querySelector(href);
     if (!el) return;
     const navHeight = 64;
     const y = el.getBoundingClientRect().top + window.scrollY - navHeight;
-    window.scrollTo({ top: y, behavior: "smooth" });
+    smoothScrollTo(Math.max(0, y));
     window.history.replaceState(null, "", href);
   };
 
@@ -100,7 +108,7 @@ export default function Navbar() {
             href="#front"
             onClick={(e) => {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              smoothScrollTo(0);
               window.history.replaceState(null, "", "#front");
             }}
             className="flex items-center"

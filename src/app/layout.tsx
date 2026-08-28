@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/context/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackgroundFX from "@/components/BackgroundFX";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -58,6 +59,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${pacifico.variable}`}
     >
       <body>
+        <SmoothScroll />
         <ThemeProvider>
           <BackgroundFX />
           <Navbar />
