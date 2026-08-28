@@ -10,7 +10,7 @@
     "Full-Stack & MLOps"
   ],
   "description": "I build the systems that put speech AI into production — ASR training pipelines, distributed multi-GPU training, and the cloud infrastructure underneath them.",
-  "chips": ["SPEECH AI", "DISTRIBUTED TRAINING", "MLOps", "FULL STACK"],
+  "chips": ["SPEECH AI", "MLOps", "DISTRIBUTED TRAINING", "FULL STACK"],
   "email": "gspagare03@gmail.com",
   "phone": "+91 7264997994",
   "location": "Mumbai, Maharashtra",

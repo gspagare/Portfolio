@@ -9,6 +9,11 @@
 
 /* ========== Lenis Smooth Scroll ========== */
 
+html,
+body {
+  overflow-x: clip;
+}
+
 html.lenis,
 html.lenis body {
   height: auto;

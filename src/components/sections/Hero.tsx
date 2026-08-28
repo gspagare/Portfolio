@@ -36,13 +36,13 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="front" className="relative min-h-svh flex flex-col">
-      <div className="flex-1 flex justify-center px-6 pt-[calc(var(--nav-h)+40px)] pb-24">
+    <section id="front" className="relative min-h-dvh flex flex-col">
+      <div className="flex-1 flex justify-center px-6 pt-[calc(var(--nav-h)+8px)] sm:pt-[calc(var(--nav-h)+24px)] pb-12 lg:pt-[calc(var(--nav-h)+40px)] lg:pb-24">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid w-full max-w-5xl lg:grid-cols-[1.1fr_0.9fr] lg:gap-16"
+          className="grid w-full max-w-5xl self-center lg:grid-cols-[1.1fr_0.9fr] lg:gap-16"
         >
           <motion.div
             variants={item}
@@ -74,7 +74,7 @@ export default function Hero() {
 
             <motion.h1
               variants={item}
-              className="text-5xl md:text-6xl font-pacifico mb-4 gradient-text overflow-visible leading-[1.5] py-3"
+              className="text-4xl sm:text-5xl md:text-6xl font-pacifico mb-4 gradient-text overflow-visible leading-[1.5] py-3"
             >
               {profile.name}.
             </motion.h1>
@@ -103,12 +103,14 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={item} className="overflow-visible">
-              <SliderPill className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
-                {profile.chips.map((chip) => (
+              <SliderPill className="grid grid-cols-2 gap-x-2 gap-y-2 items-center w-fit mx-auto mb-8 lg:flex lg:flex-wrap lg:gap-2 lg:justify-start lg:w-auto lg:mx-0">
+                {profile.chips.map((chip, i) => (
                   <span
                     key={chip}
                     data-slide
-                    className="relative px-4 py-1.5 text-xs font-medium rounded-full text-[var(--text-muted)] hover:text-[var(--accent-primary)] transition-colors"
+                    className={`relative px-4 py-1.5 text-xs font-medium rounded-full whitespace-nowrap text-[var(--text-muted)] hover:text-[var(--accent-primary)] transition-colors ${
+                      i % 2 === 0 ? "justify-self-end" : "justify-self-start"
+                    }`}
                   >
                     {chip}
                   </span>

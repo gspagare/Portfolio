@@ -8,7 +8,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="px-6 py-12 md:py-16 min-h-[calc(100svh_-_var(--nav-h)_-_var(--footer-h))]"
+      className="px-6 py-12 md:py-16 min-h-[calc(100dvh_-_var(--nav-h)_-_var(--footer-h))]"
     >
       <div className="max-w-4xl mx-auto w-full">
         <SectionTitle index="06" title="Contact" />

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--border-light)] h-[var(--footer-h)] flex items-center">
+    <footer className="border-t border-[var(--border-light)] min-h-[calc(var(--footer-h)+env(safe-area-inset-bottom,0px))] pb-[env(safe-area-inset-bottom)] flex items-center">
       <div className="mx-auto max-w-6xl w-full px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
         <p className="text-xs text-[var(--text-muted)]">
           &copy; Gaurav Pagare 2026
