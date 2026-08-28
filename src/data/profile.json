@@ -3,6 +3,12 @@
   "initials": "GP",
   "title": "Software Engineer — ML Systems & Infrastructure",
   "tagline": "Hi, my name is",
+  "roles": [
+    "Software Engineer",
+    "ML Systems & Infrastructure",
+    "Speech AI & Voice Tech",
+    "Full-Stack & MLOps"
+  ],
   "description": "I build the systems that put speech AI into production — ASR training pipelines, distributed multi-GPU training, and the cloud infrastructure underneath them.",
   "chips": ["SPEECH AI", "DISTRIBUTED TRAINING", "MLOps", "FULL STACK"],
   "email": "gspagare03@gmail.com",

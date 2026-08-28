@@ -1,15 +1,27 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import profile from "@/data/profile.json";
 import ScrollReveal from "@/components/ScrollReveal";
 import SliderPill from "@/components/SliderPill";
+import Magnetic from "@/components/Magnetic";
 
 export default function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setRoleIndex((i) => (i + 1) % profile.roles.length),
+      3000
+    );
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section
       id="front"
-      className="min-h-screen flex items-center justify-center px-6"
+      className="relative min-h-screen flex items-center justify-center px-6"
     >
       <div className="max-w-4xl text-center overflow-visible">
         <ScrollReveal>
@@ -18,16 +30,33 @@ export default function Hero() {
           </p>
         </ScrollReveal>
         <ScrollReveal delay={100} className="overflow-visible">
-          <h1 className="text-5xl md:text-7xl font-pacifico mb-4 pb-5 gradient-text overflow-visible leading-[1.2]">
+          <h1 className="text-5xl md:text-7xl font-pacifico mb-5 pb-1 gradient-text overflow-visible leading-[1.2]">
             {profile.name}.
           </h1>
         </ScrollReveal>
-        <ScrollReveal delay={200}>
-          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--text-secondary)] mb-6 leading-snug">
-            {profile.description}
-          </h2>
+        <ScrollReveal delay={200} className="overflow-visible">
+          <div className="flex justify-center mb-5">
+            <AnimatePresence mode="wait">
+              <motion.h2
+                key={roleIndex}
+                initial={{ y: 14, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -14, opacity: 0 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="text-2xl md:text-3xl font-semibold text-[var(--text-secondary)] leading-snug"
+              >
+                {profile.roles[roleIndex]}
+                <span className="text-[var(--accent-primary)]">.</span>
+              </motion.h2>
+            </AnimatePresence>
+          </div>
         </ScrollReveal>
-        <ScrollReveal delay={300}>
+        <ScrollReveal delay={280}>
+          <p className="text-base md:text-lg text-[var(--text-muted)] max-w-2xl mx-auto mb-6 leading-relaxed">
+            {profile.description}
+          </p>
+        </ScrollReveal>
+        <ScrollReveal delay={340}>
           <SliderPill className="flex flex-wrap justify-center gap-3 mb-10">
             {profile.chips.map((chip) => (
               <span
@@ -41,27 +70,47 @@ export default function Hero() {
           </SliderPill>
         </ScrollReveal>
         <ScrollReveal delay={400}>
-          <div className="flex justify-center gap-4">
-            <motion.a
-              href="#contact"
-              whileHover={{ y: -2, scale: 1.02 }}
-              whileTap={{ y: 0, scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="px-6 py-3 rounded-lg font-semibold text-sm btn-gradient"
-            >
-              Get In Touch
-            </motion.a>
-            <motion.a
-              href="#projects"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="px-6 py-3 rounded-lg font-semibold text-sm border border-[var(--border-light)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-colors"
-            >
-              View My Work
-            </motion.a>
+          <div className="flex justify-center gap-8">
+            <Magnetic strength={0.3} className="inline-block">
+              <motion.a
+                href="#contact"
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="block px-6 py-3 rounded-lg font-semibold text-sm btn-gradient"
+              >
+                Get In Touch
+              </motion.a>
+            </Magnetic>
+            <Magnetic strength={0.3} className="inline-block">
+              <motion.a
+                href="#projects"
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="block px-6 py-3 rounded-lg font-semibold text-sm border border-[var(--border-light)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-colors"
+              >
+                View My Work
+              </motion.a>
+            </Magnetic>
           </div>
         </ScrollReveal>
+      </div>
+
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-8 flex flex-col items-center gap-2.5">
+        <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--text-muted)]">
+          scroll
+        </span>
+        <motion.div
+          aria-hidden="true"
+          animate={{ opacity: [0.35, 1, 0.35] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          className="h-9 w-5 rounded-full border-2 border-[var(--text-muted)]/60 flex justify-center pt-1.5"
+        >
+          <motion.div
+            animate={{ y: [0, 13, 0], opacity: [1, 0.2, 1] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            className="h-1.5 w-1.5 rounded-full bg-[var(--accent-primary)]"
+          />
+        </motion.div>
       </div>
     </section>
   );
