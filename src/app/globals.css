@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* ========== Accessibility ========== */
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
 /* ========== Lenis Smooth Scroll ========== */
 
 html.lenis,

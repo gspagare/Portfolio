@@ -91,6 +91,7 @@ export default function Navbar() {
 
   return (
     <nav
+      aria-label="Primary"
       className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow] duration-300 ${
         scrolled
           ? "bg-[var(--bg-glass)] backdrop-blur-xl shadow-[var(--shadow-md)]"
@@ -195,6 +196,8 @@ export default function Navbar() {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="md:hidden p-2 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             {mobileOpen ? (
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -210,7 +213,10 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-[var(--bg-glass-strong)] backdrop-blur-xl border-t border-[var(--border-light)]">
+        <div
+          id="mobile-menu"
+          className="md:hidden bg-[var(--bg-glass-strong)] backdrop-blur-xl border-t border-[var(--border-light)]"
+        >
           <ul className="flex flex-col p-4 gap-1">
             {!isHome && (
               <li>

@@ -1,11 +1,28 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import profile from "@/data/profile.json";
-import ScrollReveal from "@/components/ScrollReveal";
 import SliderPill from "@/components/SliderPill";
 import Magnetic from "@/components/Magnetic";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.09, delayChildren: 0.1 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 24, filter: "blur(8px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: "easeOut" as const },
+  },
+};
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -23,40 +40,66 @@ export default function Hero() {
       id="front"
       className="relative min-h-screen flex items-center justify-center px-6"
     >
-      <div className="max-w-4xl text-center overflow-visible">
-        <ScrollReveal>
-          <p className="text-lg font-outfit text-[var(--accent-primary)] mb-4">
-            {profile.tagline}
-          </p>
-        </ScrollReveal>
-        <ScrollReveal delay={100} className="overflow-visible">
-          <h1 className="text-5xl md:text-7xl font-pacifico mb-5 pb-1 gradient-text overflow-visible leading-[1.2]">
-            {profile.name}.
-          </h1>
-        </ScrollReveal>
-        <ScrollReveal delay={200} className="overflow-visible">
-          <div className="flex justify-center mb-5">
-            <AnimatePresence mode="wait">
-              <motion.h2
-                key={roleIndex}
-                initial={{ y: 14, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -14, opacity: 0 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
-                className="text-2xl md:text-3xl font-semibold text-[var(--text-secondary)] leading-snug"
-              >
-                {profile.roles[roleIndex]}
-                <span className="text-[var(--accent-primary)]">.</span>
-              </motion.h2>
-            </AnimatePresence>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="max-w-4xl text-center overflow-visible"
+      >
+        <motion.div
+          variants={item}
+          className="flex justify-center mb-6 overflow-visible"
+        >
+          <div className="rounded-full bg-[var(--gradient-primary)] p-[3px] shadow-[var(--glow-primary)]">
+            <Image
+              src={profile.profileImage}
+              alt="Gaurav Pagare"
+              width={176}
+              height={176}
+              priority
+              className="h-36 w-36 md:h-44 md:w-44 rounded-full object-cover object-top"
+            />
           </div>
-        </ScrollReveal>
-        <ScrollReveal delay={280}>
-          <p className="text-base md:text-lg text-[var(--text-muted)] max-w-2xl mx-auto mb-6 leading-relaxed">
-            {profile.description}
-          </p>
-        </ScrollReveal>
-        <ScrollReveal delay={340}>
+        </motion.div>
+
+        <motion.p
+          variants={item}
+          className="text-lg font-outfit text-[var(--accent-primary)] mb-4"
+        >
+          {profile.tagline}
+        </motion.p>
+
+        <motion.h1
+          variants={item}
+          className="text-5xl md:text-7xl font-pacifico mb-5 pb-1 gradient-text overflow-visible leading-[1.2]"
+        >
+          {profile.name}.
+        </motion.h1>
+
+        <motion.div variants={item} className="flex justify-center mb-5 overflow-visible">
+          <AnimatePresence mode="wait">
+            <motion.h2
+              key={roleIndex}
+              initial={{ y: 14, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -14, opacity: 0 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="text-2xl md:text-3xl font-semibold text-[var(--text-secondary)] leading-snug"
+            >
+              {profile.roles[roleIndex]}
+              <span className="text-[var(--accent-primary)]">.</span>
+            </motion.h2>
+          </AnimatePresence>
+        </motion.div>
+
+        <motion.p
+          variants={item}
+          className="text-base md:text-lg text-[var(--text-muted)] max-w-2xl mx-auto mb-6 leading-relaxed"
+        >
+          {profile.description}
+        </motion.p>
+
+        <motion.div variants={item} className="overflow-visible">
           <SliderPill className="flex flex-wrap justify-center gap-3 mb-10">
             {profile.chips.map((chip) => (
               <span
@@ -68,32 +111,31 @@ export default function Hero() {
               </span>
             ))}
           </SliderPill>
-        </ScrollReveal>
-        <ScrollReveal delay={400}>
-          <div className="flex justify-center gap-8">
-            <Magnetic strength={0.3} className="inline-block">
-              <motion.a
-                href="#contact"
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="block px-6 py-3 rounded-lg font-semibold text-sm btn-gradient"
-              >
-                Get In Touch
-              </motion.a>
-            </Magnetic>
-            <Magnetic strength={0.3} className="inline-block">
-              <motion.a
-                href="#projects"
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="block px-6 py-3 rounded-lg font-semibold text-sm border border-[var(--border-light)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-colors"
-              >
-                View My Work
-              </motion.a>
-            </Magnetic>
-          </div>
-        </ScrollReveal>
-      </div>
+        </motion.div>
+
+        <motion.div variants={item} className="flex justify-center gap-8">
+          <Magnetic strength={0.3} className="inline-block">
+            <motion.a
+              href="#contact"
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="block px-6 py-3 rounded-lg font-semibold text-sm btn-gradient"
+            >
+              Get In Touch
+            </motion.a>
+          </Magnetic>
+          <Magnetic strength={0.3} className="inline-block">
+            <motion.a
+              href="#projects"
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="block px-6 py-3 rounded-lg font-semibold text-sm border border-[var(--border-light)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-colors"
+            >
+              View My Work
+            </motion.a>
+          </Magnetic>
+        </motion.div>
+      </motion.div>
 
       <div className="absolute left-1/2 -translate-x-1/2 bottom-8 flex flex-col items-center gap-2.5">
         <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--text-muted)]">
