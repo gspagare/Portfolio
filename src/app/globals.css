@@ -498,6 +498,46 @@ h1, h2, h3 {
   transform: translateY(0) scale(0.98);
 }
 
+/* ========== Nav Link ========== */
+
+.nav-link {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-violet));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.nav-active::after {
+  transform: scaleX(1);
+}
+
+.nav-link.nav-active {
+  color: var(--accent-primary);
+  text-shadow:
+    0 0 8px rgba(59, 130, 246, 0.8),
+    0 0 22px rgba(59, 130, 246, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::after {
+    transition: none;
+  }
+}
+
 /* ========== Section Title ========== */
 
 .section-title {
