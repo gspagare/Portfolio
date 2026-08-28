@@ -2,6 +2,7 @@ import about from "@/data/about.json";
 import profile from "@/data/profile.json";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionTitle from "@/components/SectionTitle";
+import StatCounter from "@/components/StatCounter";
 
 const badgeColors: Record<string, string> = {
   blue: "border-blue-500/30 text-blue-400 bg-blue-500/10",
@@ -36,6 +37,28 @@ export default function About() {
               >
                 {b.label}
               </span>
+            ))}
+          </div>
+        </ScrollReveal>
+        <ScrollReveal delay={260}>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-4 mb-8">
+            {about.stats.map((s, i) => (
+              <div key={s.label} className="flex items-center gap-6">
+                {i > 0 && (
+                  <span
+                    aria-hidden="true"
+                    className="h-6 w-px bg-gradient-to-b from-transparent via-[var(--border-light)] to-transparent"
+                  />
+                )}
+                <div className="flex items-baseline gap-2">
+                  <span className="text-2xl md:text-3xl font-outfit font-bold gradient-text">
+                    <StatCounter value={s.value} suffix={s.suffix} />
+                  </span>
+                  <span className="text-[11px] uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                    {s.label}
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </ScrollReveal>
